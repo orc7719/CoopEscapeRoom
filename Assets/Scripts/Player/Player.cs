@@ -70,6 +70,9 @@ public class Player : NetworkBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        ClearPlayer();
+        EnablePlayer();
     }
 
     void ClearPlayer()
