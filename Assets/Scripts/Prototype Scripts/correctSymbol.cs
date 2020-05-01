@@ -19,5 +19,7 @@ public class correctSymbol : MonoBehaviour
         GameObject spawnCorrectTile = Instantiate(getCorrectTile, transform.position, transform.rotation);
 
         Destroy(gameObject);
+
+        Debug.Log("Symbol Puzzle Completed");
     }
 }
