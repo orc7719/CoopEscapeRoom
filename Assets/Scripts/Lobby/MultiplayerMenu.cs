@@ -18,12 +18,12 @@ public class MultiplayerMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        nameInput.onValueChanged.AddListener(UpdateName);
+        nameInput.onEndEdit.AddListener(UpdateName);
     }
 
     private void OnDisable()
     {
-        nameInput.onValueChanged.RemoveListener(UpdateName);
+        nameInput.onEndEdit.RemoveListener(UpdateName);
     }
 
     void UpdateName(string newName)
