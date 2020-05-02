@@ -20,6 +20,11 @@ public class RoomPlayerItem : MonoBehaviour
     {
         roomPlayers[playerIndex] = this;
 
+        ResetPlayerItem();
+    }
+
+    public void ResetPlayerItem()
+    {
         readyButton.interactable = false;
         buttonText.text = "";
         nameText.text = "Waiting for player...";
@@ -46,5 +51,10 @@ public class RoomPlayerItem : MonoBehaviour
     {
         isReady = !isReady;
         CustomNetworkRoomManager.singleton.roomSlots[playerIndex].CmdChangeReadyState(isReady);
+    }
+
+    public void UpdatePlayerName(string newName)
+    {
+        nameText.text = newName;
     }
 }
