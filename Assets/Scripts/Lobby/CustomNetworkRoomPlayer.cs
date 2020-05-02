@@ -24,12 +24,13 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     public override void OnStartLocalPlayer()
     {
         if (isLocalPlayer)
-            CmdUpdatePlayerName(Random.Range(0, 10000).ToString("000000"));
+            CmdUpdatePlayerName(GameManager.Settings.PlayerData.playerName);
     }
 
     private void OnDestroy()
     {
-        RoomPlayerItem.roomPlayers[index].ResetPlayerItem();
+        if (CustomNetworkRoomManager.IsSceneActive(CustomNetworkRoomManager.singleton.RoomScene))
+            RoomPlayerItem.roomPlayers[index].ResetPlayerItem();
     }
 
     // This is a hook that is invoked on clients when a RoomPlayer switches between ready or not ready.

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using ScriptableObjectArchitecture;
 
 public class MultiplayerMenu : MonoBehaviour
 {
@@ -17,12 +18,17 @@ public class MultiplayerMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        nameInput.onValueChanged.AddListener(UpdateName);
     }
 
     private void OnDisable()
     {
-        
+        nameInput.onValueChanged.RemoveListener(UpdateName);
+    }
+
+    void UpdateName(string newName)
+    {
+        GameManager.Settings.PlayerData.playerName = newName;
     }
 
     public void JoinServer()

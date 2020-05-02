@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9d2639e885c78ee4594bb1fc4e9277ee
+labels:
+- communicating
+- events
+- messages
+timeCreated: 1515488877
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
