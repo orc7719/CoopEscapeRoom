@@ -23,18 +23,8 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     /// This happens after OnStartClient(), as it is triggered by an ownership message from the server. This is an appropriate place to activate components or functionality that should only be active for the local player, such as cameras and input.
     public override void OnStartLocalPlayer()
     {
-        string newPlayerName = Random.Range(0, 10000).ToString("000000");
-
-            RoomPlayerItem.roomPlayers[index].UpdatePlayerName(newPlayerName);
-
         if (isLocalPlayer)
-            CmdUpdatePlayerName(newPlayerName);
-    }
-
-    // This is a hook that is invoked on all player objects when exiting the room.
-    public override void OnClientExitRoom()
-    {
-
+            CmdUpdatePlayerName(Random.Range(0, 10000).ToString("000000"));
     }
 
     private void OnDestroy()
