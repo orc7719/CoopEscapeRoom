@@ -16,7 +16,6 @@ public class leverDoTweenAnimation : MonoBehaviour
     }
 
     public void LeverActivated() {
-        lever = GameObject.Find("lever");
 
         lever.transform.DORotateQuaternion(Quaternion.EulerAngles(0, -90, -90), movementDuration);
 
