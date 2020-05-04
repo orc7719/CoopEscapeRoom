@@ -296,7 +296,7 @@ MonoBehaviour:
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: 
-  onlineScene: Assets/Scenes/Testing Scenes/Cory.unity
+  onlineScene: Assets/Scenes/Testing Scenes/Aiden.unity
   transport: {fileID: 1246523873}
   networkAddress: localhost
   maxConnections: 4
