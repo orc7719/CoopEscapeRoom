@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 7041e84c29d83f742b9cc4d365502006
+  - enabled: 1
+    path: Assets/Scenes/Networked Scene Loader.unity
+    guid: 80478d23c9bd3fb4384ec1e29480a389
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/Cory.unity
+    guid: e37a6dd54d29b504d812b9a49c0d226d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3d7b9ecce9addc64c8384295d75b78e3,
       type: 2}

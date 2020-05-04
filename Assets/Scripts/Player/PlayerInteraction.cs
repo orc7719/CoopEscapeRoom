@@ -29,16 +29,22 @@ public class PlayerInteraction : MonoBehaviour
                 {
 
                 }
+
+               
             }
             else
             {
                 currentInteract = null;
             }
+
+            Debug.DrawLine(cam.transform.position, hit.point, Color.green);
         }
         else
         {
             currentInteract = null;
         }
+
+        Debug.Log("Looking at interactable: " + currentInteract.name);
     }
 
     void OnInteract()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1560525985194150435}
   - component: {fileID: 4450851150946580747}
   - component: {fileID: 2153489099233569248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351657267435540531}
   - component: {fileID: 6924369216942718418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Friction Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 7645874664551117612}
   - component: {fileID: 3302919946974028300}
   - component: {fileID: 472541575345336033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3976604318598214386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 6968839047242652824}
   - component: {fileID: 4391686213284535334}
   - component: {fileID: 5584143879319003945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ MonoBehaviour:
   interactDistance: 1
   interactLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
 --- !u!1 &9139757332661815863
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299869150331855755}
   - component: {fileID: 5281858338477153767}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
