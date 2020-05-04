@@ -17,9 +17,9 @@ public class PlayerInteraction : MonoBehaviour
 
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interactDistance, interactLayer))
         {
-            if(hit.transform.GetComponent<Interactable>())
+            if(hit.transform.parent.GetComponent<Interactable>())
             {
-                currentInteract = hit.transform.GetComponentInParent<Interactable>();
+                currentInteract = hit.transform.parent.GetComponent<Interactable>();
 
                 if(currentInteract.isInteractable)
                 {
