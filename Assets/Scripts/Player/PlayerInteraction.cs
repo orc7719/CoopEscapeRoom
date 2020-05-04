@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if(hit.transform.GetComponent<Interactable>())
             {
-                currentInteract = hit.transform.GetComponent<Interactable>();
+                currentInteract = hit.transform.GetComponentInParent<Interactable>();
 
                 if(currentInteract.isInteractable)
                 {
