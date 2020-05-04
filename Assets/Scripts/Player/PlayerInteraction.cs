@@ -29,8 +29,6 @@ public class PlayerInteraction : MonoBehaviour
                 {
 
                 }
-
-               
             }
             else
             {
@@ -43,8 +41,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteract = null;
         }
-
-        Debug.Log("Looking at interactable: " + currentInteract.name);
     }
 
     void OnInteract()

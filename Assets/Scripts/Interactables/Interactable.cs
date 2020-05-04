@@ -11,14 +11,8 @@ public class Interactable : MonoBehaviour
     public void Interact()
     {
         OnInteract.Invoke();
-
-        Debug.Log(gameObject.name + " Interacted With");
-
         Interacted();
     }
 
-    public virtual void Interacted()
-    {
-
-    }
+    public virtual void Interacted() { }
 }
