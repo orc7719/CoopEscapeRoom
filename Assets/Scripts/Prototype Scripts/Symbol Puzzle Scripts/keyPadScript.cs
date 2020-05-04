@@ -10,7 +10,7 @@ public class keyPadScript : MonoBehaviour
 
    private string correctPasscode = "ACBD";
 
-
+    [SerializeField] private TMP_Text passcodeTxt;
 
     public int numberKeyPressed;
     // Start is called before the first frame update
@@ -34,11 +34,15 @@ public class keyPadScript : MonoBehaviour
 
            numberKeyPressed = 0;
        }
+
+       passcodeTxt.text = InputText;
     }
 
     public void OnePressed() {
         InputText = InputText + "A";
         numberKeyPressed++;
+
+        Debug.Log("pressed");
     }
 
     public void TwoPressed() {
