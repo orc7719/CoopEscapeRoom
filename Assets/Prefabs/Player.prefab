@@ -485,7 +485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c63a8d562a78b4fa9501730207ae0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
+  sprintSpeed: 5
   maxVelocityChange: 8
   jumpHeight: 1
   gravity: 9.18
@@ -525,7 +526,7 @@ MonoBehaviour:
   interactDistance: 1
   interactLayer:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1335
 --- !u!1 &9139757332661815863
 GameObject:
   m_ObjectHideFlags: 0
