@@ -17,6 +17,7 @@ public class InteractableLever : Interactable
     private void Start()
     {
         leverModel = transform.Find("Model");
+        leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMax : rotateDistanceMin, 0, 0), 0);
     }
 
     public override void Interacted()

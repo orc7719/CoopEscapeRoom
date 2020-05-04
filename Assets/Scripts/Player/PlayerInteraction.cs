@@ -17,13 +17,13 @@ public class PlayerInteraction : MonoBehaviour
 
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interactDistance, interactLayer))
         {
-            if(hit.transform.parent.GetComponent<Interactable>())
+            if(hit.transform.GetComponent<Interactable>())
             {
-                currentInteract = hit.transform.parent.GetComponent<Interactable>();
+                currentInteract = hit.transform.GetComponent<Interactable>();
 
                 if(currentInteract.isInteractable)
                 {
-
+                    PlayerCanvas.Instance.ShowInteract(true);
                 }
                 else
                 {
@@ -33,6 +33,7 @@ public class PlayerInteraction : MonoBehaviour
             else
             {
                 currentInteract = null;
+                PlayerCanvas.Instance.ShowInteract(false);
             }
 
             Debug.DrawLine(cam.transform.position, hit.point, Color.green);
@@ -40,6 +41,7 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             currentInteract = null;
+            PlayerCanvas.Instance.ShowInteract(false);
         }
     }
 
