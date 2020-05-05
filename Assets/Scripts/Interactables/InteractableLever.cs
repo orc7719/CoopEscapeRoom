@@ -20,7 +20,7 @@ public class InteractableLever : Interactable
         leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMax : rotateDistanceMin, 0, 0), 0);
     }
 
-    public override void Interacted()
+    public override void Interacted(PlayerInteraction player)
     {
         isActivated = !isActivated;
         StartCoroutine(AnimateLever());

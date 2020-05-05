@@ -8,11 +8,11 @@ public class Interactable : MonoBehaviour
     [SerializeField] UnityEvent OnInteract;
 
     public bool isInteractable = true;
-    public void Interact()
+    public void Interact(PlayerInteraction player)
     {
         OnInteract.Invoke();
-        Interacted();
+        Interacted(player);
     }
 
-    public virtual void Interacted() { }
+    public virtual void Interacted(PlayerInteraction player) { }
 }

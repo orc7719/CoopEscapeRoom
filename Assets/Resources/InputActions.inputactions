@@ -14,6 +14,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Drop",
+                    "type": "Button",
+                    "id": "84edc611-2e13-46b9-b033-f1aacc7da6f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "2c7589f9-3238-4f46-932d-9c129ab703e4",
@@ -236,6 +244,17 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f0d27e1-b2e8-4dfb-8cb7-a2a84f7b36bd",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Drop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
