@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: 808648194d998ce44a5d44e010dacf1d
+=======
+guid: 8e26dbd9e3086ec45adf6c662a7bfe92
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817
+=======
+<<<<<<< HEAD:Assets/PlayerCanvas.cs.meta
+guid: ee9ea91a04d1bbc4da0c082beb518e2c
+=======
+guid: 8e26dbd9e3086ec45adf6c662a7bfe92
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817:Assets/Resources/InputActions.cs.meta
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817
+=======
+<<<<<<< HEAD:Assets/Scripts/Interactables/InteractableButton.cs.meta
+guid: c6412557942f28347b1c9a28c8e6e40f
+=======
+guid: 8e26dbd9e3086ec45adf6c662a7bfe92
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817:Assets/Resources/InputActions.cs.meta
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

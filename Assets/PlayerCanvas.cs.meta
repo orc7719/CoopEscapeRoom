@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/PlayerCanvas.cs.meta
+guid: ee9ea91a04d1bbc4da0c082beb518e2c
+=======
+guid: 8e26dbd9e3086ec45adf6c662a7bfe92
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817:Assets/Resources/InputActions.cs.meta
+=======
+guid: ee9ea91a04d1bbc4da0c082beb518e2c
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817
+=======
+guid: ee9ea91a04d1bbc4da0c082beb518e2c
+>>>>>>> 092b65bdcb47f5fc274059807438c190bfeac817
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

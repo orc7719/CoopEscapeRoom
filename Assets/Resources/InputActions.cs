@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Resources/InputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -63,6 +63,14 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""323c738b-19ab-4aac-9089-3806810d1b87"",
                     ""expectedControlType"": ""Analog"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Value"",
+                    ""id"": ""60727c1f-6c7b-4f4d-903e-f308fd79f1e9"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -232,6 +240,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""LookY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f8f8ecf-55c9-457c-932a-ebf947d036ea"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -263,6 +282,7 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_LookX = m_Player.FindAction("LookX", throwIfNotFound: true);
         m_Player_LookY = m_Player.FindAction("LookY", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -318,6 +338,7 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_LookX;
     private readonly InputAction m_Player_LookY;
+    private readonly InputAction m_Player_Sprint;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -328,6 +349,7 @@ public class @InputActions : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @LookX => m_Wrapper.m_Player_LookX;
         public InputAction @LookY => m_Wrapper.m_Player_LookY;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -355,6 +377,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @LookY.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookY;
                 @LookY.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookY;
                 @LookY.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookY;
+                @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -377,6 +402,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @LookY.started += instance.OnLookY;
                 @LookY.performed += instance.OnLookY;
                 @LookY.canceled += instance.OnLookY;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
         }
     }
@@ -398,5 +426,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
 }

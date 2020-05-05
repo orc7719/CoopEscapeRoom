@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 if(currentInteract.isInteractable)
                 {
-
+                    PlayerCanvas.Instance.ShowInteract(true);
                 }
                 else
                 {
@@ -33,11 +33,15 @@ public class PlayerInteraction : MonoBehaviour
             else
             {
                 currentInteract = null;
+                PlayerCanvas.Instance.ShowInteract(false);
             }
+
+            Debug.DrawLine(cam.transform.position, hit.point, Color.green);
         }
         else
         {
             currentInteract = null;
+            PlayerCanvas.Instance.ShowInteract(false);
         }
     }
 
