@@ -122,26 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &149370887 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7375919513624523319, guid: 323d837f07eacb04488a2e6300477c75,
-    type: 3}
-  m_PrefabInstance: {fileID: 5623873526978857335}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &149370888
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149370887}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: fba9484d89c10fb45bc74c04c93785ec, type: 3}
 --- !u!1 &606824342
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 2485314709991711096, guid: 323d837f07eacb04488a2e6300477c75,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.766443
+      value: 3.587
       objectReference: {fileID: 0}
     - target: {fileID: 2485314709991711096, guid: 323d837f07eacb04488a2e6300477c75,
         type: 3}
@@ -888,18 +868,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grabbable Object
       objectReference: {fileID: 0}
-    - target: {fileID: 7569478435765453343, guid: 323d837f07eacb04488a2e6300477c75,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7569478435765453343, guid: 323d837f07eacb04488a2e6300477c75,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1676271976558287996, guid: 323d837f07eacb04488a2e6300477c75, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 323d837f07eacb04488a2e6300477c75, type: 3}
 --- !u!1001 &7816038771562714039
 PrefabInstance:
