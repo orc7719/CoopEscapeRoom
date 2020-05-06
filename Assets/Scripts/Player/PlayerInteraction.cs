@@ -9,6 +9,9 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] LayerMask interactLayer;
     Interactable currentInteract;
 
+    public Transform holdPoint;
+    public GrabbableObject heldObject;
+
     private void Update()
     {
         RaycastHit hit;
@@ -51,8 +54,26 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (currentInteract.isInteractable)
             {
-                currentInteract.Interact();
+                currentInteract.Interact(this);
             }
         }
+    }
+
+    void OnDrop()
+    {
+        if (heldObject)
+        {
+            heldObject.Drop();
+            heldObject = null;
+        }
+    }
+
+    public void PickupObject(GrabbableObject newObject)
+    {
+        if (heldObject)
+            heldObject.Drop();
+
+        heldObject = newObject;
+        heldObject.AttachToPlayer(this);
     }
 }

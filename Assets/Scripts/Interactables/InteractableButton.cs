@@ -15,7 +15,7 @@ public class InteractableButton : Interactable
 
     }
 
-    public override void Interacted()
+    public override void Interacted(PlayerInteraction player)
     {
         StartCoroutine(AnimateButton());
     }
