@@ -29,10 +29,9 @@ public class SettingButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayTxt = GetComponent<TMP_Text>();
-        graphicsTxt = GetComponent<TMP_Text>();
-        audioTxt = GetComponent<TMP_Text>();
-        controlsTxt = GetComponent<TMP_Text>();
+        displayScreen.SetActive(true);
+
+       
     }
 
     // Update is called once per frame
@@ -74,7 +73,7 @@ public class SettingButtonScript : MonoBehaviour
         audioScreen.SetActive(false);
         controlsScreen.SetActive(false);
 
-        Debug.Log("display");
+        
     }
 
     public void graphicsButtonPressed() {
@@ -83,7 +82,7 @@ public class SettingButtonScript : MonoBehaviour
         audioScreen.SetActive(false);
         controlsScreen.SetActive(false);
 
-        Debug.Log("graphics");
+      
     }
 
     public void audioButtonPressed() {

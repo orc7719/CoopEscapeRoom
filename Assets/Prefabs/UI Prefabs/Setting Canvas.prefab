@@ -1346,6 +1346,10 @@ MonoBehaviour:
   graphicsScreen: {fileID: 6031577878159902293}
   audioScreen: {fileID: 6031577879781388328}
   controlsScreen: {fileID: 6031577879058967359}
+  displayTxt: {fileID: 6031577878062270098}
+  graphicsTxt: {fileID: 6031577877987076662}
+  audioTxt: {fileID: 6031577879441801387}
+  controlsTxt: {fileID: 6031577879044432681}
 --- !u!1 &6031577879441801385
 GameObject:
   m_ObjectHideFlags: 0
