@@ -6,7 +6,7 @@ using DG.Tweening;
 public class SocketableObject : GrabbableObject
 {
     public SocketTypes socketType = SocketTypes.Generic;
-
+    public SocketTags socketTag = SocketTags.None;
     public void AttachToSocket(PlayerInteraction player, InteractableSocket socket)
     {
         player.DropObject();

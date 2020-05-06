@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum SocketTypes { Generic, Fuse }
+public enum SocketTags { None, Red, Green, Blue}
 
 public class InteractableSocket : Interactable
 {
-    
+    [Header("Socket Settings")]
     [SerializeField] SocketTypes socketType = SocketTypes.Generic;
+    [SerializeField] SocketTags correctTag = SocketTags.None;
+
+    [Header("Output Events")]
+    ToggleEvent OnSocketUpdated;
+    public bool socketCorrect = false;
+    
     public SocketableObject socketedObject= null;
 
     public override void Interacted(PlayerInteraction player)
@@ -18,13 +25,27 @@ public class InteractableSocket : Interactable
 
             if (targetObject != null)
             {
-                targetObject.AttachToSocket(player,this);
+                if (targetObject.socketType == socketType)
+                    targetObject.AttachToSocket(player, this);
+
+                if (socketedObject.socketTag == correctTag)
+                {
+                    socketCorrect = true;
+                    OnSocketUpdated.Invoke(true);
+                }
+                else
+                {
+                    socketCorrect = false;
+                }
             }
         }
         else
         {
             socketedObject.AttachToPlayer(player);
             socketedObject = null;
+
+            socketCorrect = false;
+            OnSocketUpdated.Invoke(false);
         }
     }
 }
