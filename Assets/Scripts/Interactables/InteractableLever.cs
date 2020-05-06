@@ -28,10 +28,10 @@ public class InteractableLever : Interactable
 
     IEnumerator AnimateLever()
     {
-        isInteractable = false;
+        isInteractable = InteractState.Cooldown;
         leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMax : rotateDistanceMin, 0, 0), leverCooldown);
         leverEvent.Invoke(isActivated);
         yield return new WaitForSeconds(leverCooldown);
-        isInteractable = true;
+        isInteractable = InteractState.Interactable;
     }
 }

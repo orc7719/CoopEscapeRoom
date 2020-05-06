@@ -22,10 +22,10 @@ public class InteractableButton : Interactable
 
     IEnumerator AnimateButton()
     {
-        isInteractable = false;
+        isInteractable = InteractState.Cooldown;
         buttonModel.DOLocalMoveY(-pressDistance, buttonCooldown / 2);
         yield return new WaitForSeconds(buttonCooldown / 2);
         buttonModel.DOLocalMoveY(0, buttonCooldown / 2);
-        isInteractable = true;
+        isInteractable = InteractState.Interactable;
     }
 }

@@ -17,6 +17,25 @@ public class InteractableSocket : Interactable
     
     public SocketableObject socketedObject= null;
 
+    public override InteractState IsInteractable(PlayerInteraction player)
+    {
+        if (player.heldObject == null && socketedObject == null)
+            return InteractState.Locked;
+
+        if (player.heldObject == null && socketedObject != null)
+            return isInteractable;
+
+        SocketableObject targetObject = player.heldObject as SocketableObject;
+        if (targetObject != null)
+        {
+            if (targetObject.socketType == socketType)
+                return InteractState.Interactable;
+            else
+                return InteractState.Locked;
+        }
+        return InteractState.None;
+    }
+
     public override void Interacted(PlayerInteraction player)
     {
         if (socketedObject == null)
@@ -42,7 +61,7 @@ public class InteractableSocket : Interactable
         }
         else
         {
-            socketedObject.AttachToPlayer(player);
+            socketedObject.DetachFromSocket(player);
             socketedObject = null;
 
             socketCorrect = false;

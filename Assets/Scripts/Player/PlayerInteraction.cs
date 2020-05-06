@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentInteract = hit.transform.GetComponent<Interactable>();
 
-                if(currentInteract.isInteractable)
+                if(currentInteract.IsInteractable(this) == Interactable.InteractState.Interactable || currentInteract.IsInteractable(this) == Interactable.InteractState.Cooldown)
                 {
                     PlayerCanvas.Instance.ShowInteract(true);
                 }
@@ -52,7 +52,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentInteract != null)
         {
-            if (currentInteract.isInteractable)
+            if (currentInteract.IsInteractable(this) == Interactable.InteractState.Interactable)
             {
                 currentInteract.Interact(this);
             }
