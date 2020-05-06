@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using DG.Tweening;
+
+public class SocketableObject : GrabbableObject
+{
+    public SocketTypes socketType = SocketTypes.Generic;
+
+    public void AttachToSocket(PlayerInteraction player, InteractableSocket socket)
+    {
+        player.DropObject();
+        socket.socketedObject = this;
+
+        //Attach to player
+        ToggleAllColliders(false);
+        transform.parent = socket.transform;
+
+        transform.DOMove(socket.transform.position, 0.25f);
+        transform.DORotateQuaternion(socket.transform.rotation, 0.25f);
+
+        wasDropped = false;
+    }
+
+    public void DetachFromSocket(PlayerInteraction player)
+    {
+        AttachToPlayer(player);
+    }
+}
