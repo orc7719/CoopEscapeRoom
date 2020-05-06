@@ -39,31 +39,31 @@ public class SettingButtonScript : MonoBehaviour
     void Update()
     {
         if (displayScreen.activeInHierarchy == true) {
-            displayTxt.fontStyle = FontStyle.Bold;
+            displayTxt.fontStyle = FontStyles.Bold;
         }
         else {
-            displayTxt.fontStyle = FontStyle.Normal;
+            displayTxt.fontStyle = FontStyles.Normal;
         }
 
         if (graphicsScreen.activeInHierarchy == true) {
-            graphicsTxt.fontStyle = FontStyle.Bold;
+            graphicsTxt.fontStyle = FontStyles.Bold;
         }
         else {
-            graphicsTxt.fontStyle = FontStyle.Normal;
+            graphicsTxt.fontStyle = FontStyles.Normal;
         }
 
         if (audioScreen.activeInHierarchy == true) {
-            audioTxt.fontStyle = FontStyle.Bold;
+            audioTxt.fontStyle = FontStyles.Bold;
         }
         else {
-            audioTxt.fontStyle = FontStyle.Normal;
+            audioTxt.fontStyle = FontStyles.Normal;
         }
 
         if (controlsScreen.activeInHierarchy == true) {
-            controlsTxt.fontStyle = FontStyle.Bold;
+            controlsTxt.fontStyle = FontStyles.Bold;
         }
         else {
-            controlsTxt.fontStyle = FontStyle.Normal;
+            controlsTxt.fontStyle = FontStyles.Normal;
         }
 
     }
