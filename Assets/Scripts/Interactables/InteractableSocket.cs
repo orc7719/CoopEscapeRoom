@@ -12,7 +12,7 @@ public class InteractableSocket : Interactable
     [SerializeField] SocketTags correctTag = SocketTags.None;
 
     [Header("Output Events")]
-    ToggleEvent OnSocketUpdated;
+    [SerializeField] ToggleEvent OnSocketUpdated;
     public bool socketCorrect = false;
     
     public SocketableObject socketedObject= null;
@@ -31,7 +31,8 @@ public class InteractableSocket : Interactable
                 if (socketedObject.socketTag == correctTag)
                 {
                     socketCorrect = true;
-                    OnSocketUpdated.Invoke(true);
+                    if (OnSocketUpdated != null)
+                        OnSocketUpdated.Invoke(true);
                 }
                 else
                 {
@@ -45,7 +46,8 @@ public class InteractableSocket : Interactable
             socketedObject = null;
 
             socketCorrect = false;
-            OnSocketUpdated.Invoke(false);
+            if (OnSocketUpdated != null)
+                OnSocketUpdated.Invoke(false);
         }
     }
 }
