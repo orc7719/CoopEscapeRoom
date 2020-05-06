@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum SocketTypes { Generic, Fuse }
-public enum SocketTags { None, Red, Green, Blue}
+public enum SocketTags { None, Red, Green, Blue, Yellow, Orange, Purple, Cyan, Pink }
 
 public class InteractableSocket : Interactable
 {
