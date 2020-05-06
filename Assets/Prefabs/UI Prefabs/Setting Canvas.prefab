@@ -107,8 +107,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -654, y: -216}
-  m_SizeDelta: {x: 83.2104, y: 17.74723}
+  m_AnchoredPosition: {x: -579.7, y: -216}
+  m_SizeDelta: {x: 122.43169, y: 17.74723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1949858345250145079
 CanvasRenderer:
@@ -164,15 +164,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.55
-  m_fontSizeBase: 36
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 14
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 6031577877891167203}
   - component: {fileID: 6031577877891167200}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MainPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,6 +1310,7 @@ GameObject:
   - component: {fileID: 6031577879043821555}
   - component: {fileID: 6031577879043821549}
   - component: {fileID: 6031577879043821554}
+  - component: {fileID: 915288373}
   m_Layer: 5
   m_Name: DisplaySettings
   m_TagString: Untagged
@@ -1374,6 +1375,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &915288373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031577879043821552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d445330a60a03fa4ba55516f7e4fcfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fovSlider: {fileID: 1743160300182784282}
+  fovText: {fileID: 4600523005711740509}
+  fieldOfViewNum: 60
 --- !u!1 &6031577879044432687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,13 +2141,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 1074108940079900659}
   m_HandleRect: {fileID: 983205607280386895}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MinValue: 30
+  m_MaxValue: 120
+  m_WholeNumbers: 1
+  m_Value: 60
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915288373}
+        m_MethodName: changeSliderValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8971993130671349545
 GameObject:
   m_ObjectHideFlags: 0
