@@ -63,17 +63,20 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (heldObject)
         {
-            heldObject.Drop();
-            heldObject = null;
+            heldObject.Drop(this);
         }
     }
 
     public void PickupObject(GrabbableObject newObject)
     {
         if (heldObject)
-            heldObject.Drop();
+            heldObject.Drop(this);
 
-        heldObject = newObject;
-        heldObject.AttachToPlayer(this);
+        newObject.AttachToPlayer(this);
+    }
+
+    public void DropObject()
+    {
+        heldObject = null;
     }
 }
