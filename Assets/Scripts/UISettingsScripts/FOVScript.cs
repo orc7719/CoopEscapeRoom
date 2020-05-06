@@ -22,11 +22,11 @@ public class FOVScript : MonoBehaviour
     void Update()
     {
 
-        fieldOfViewNum = Camera.main.fieldOfView;
+        Camera.main.fieldOfView = fovSlider.value;
         
         fovText.text = "Field of View: " + fovSlider.value;
 
-        Debug.Log ("" + fieldOfViewNum);
+        
     }
 
     public void changeSliderValue() {
