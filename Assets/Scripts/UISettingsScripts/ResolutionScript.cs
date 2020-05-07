@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
 
@@ -14,20 +13,26 @@ public class ResolutionScript : MonoBehaviour
 
     public TMP_Dropdown dropDown;
 
+    public Toggle fullScreenToggle;
+
     // Start is called before the first frame update
     void Start()
     {
+
         screenHeight = Screen.currentResolution.height;
 
         ScreenWidth = Screen.currentResolution.width;
 
-        fullScreen = true;
+        fullScreenToggle.isOn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("" + Screen.currentResolution);
+
+      fullScreen = fullScreenToggle.isOn;
+
+    
 
         if (dropDown.value == 0) {
             auto();
@@ -118,6 +123,10 @@ public class ResolutionScript : MonoBehaviour
 
     public void auto() {  // value 0
         Screen.SetResolution(ScreenWidth, screenHeight, fullScreen);
+    }
+
+    public void toggleFullScreen() {
+        fullScreen = !fullScreen;
     }
 
 }

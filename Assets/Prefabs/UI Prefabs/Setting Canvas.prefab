@@ -2649,6 +2649,7 @@ MonoBehaviour:
   screenHeight: 0
   ScreenWidth: 0
   dropDown: {fileID: 8318272144760452484}
+  fullScreenToggle: {fileID: 366392673}
 --- !u!1 &6031577879044432687
 GameObject:
   m_ObjectHideFlags: 0
