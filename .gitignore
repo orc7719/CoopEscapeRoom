@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Plugins/RainbowAssets/!Core/Source/RainbowCore.src.unitypackage.meta
+Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source/RainbowFolders.src.unitypackage.meta
+Assets/3rd Party/PolygonSciFiSpace/URP_ExtractMe.unitypackage.meta
+Assets/3rd Party/PolygonSciFiCity/URP_ExtractMe.unitypackage.meta
+Assets/3rd Party/PolygonNature/URP_ExtractMe.unitypackage.meta
+Assets/3rd Party/PolygonNature/Shaders/LWRP.unitypackage.meta
