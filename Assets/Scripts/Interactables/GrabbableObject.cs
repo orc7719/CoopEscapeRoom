@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GrabbableObject : Interactable
 {
     Transform attachPoint;
-    bool wasDropped = false;
+    public bool wasDropped = false;
     Vector3 startPos;
     Quaternion startRot;
     Collider[] colliders;
@@ -26,17 +27,22 @@ public class GrabbableObject : Interactable
 
     public void AttachToPlayer(PlayerInteraction player)
     {
-        //Attach to player
-        ToggleAllColliders(false);
-        transform.parent = player.holdPoint;
-        transform.localPosition = -attachPoint.localPosition;
-        transform.localRotation = attachPoint.localRotation;
+        if (player.heldObject == null)
+        {
+            //Attach to player
+            player.heldObject = this;
+            ToggleAllColliders(false);
+            transform.parent = player.holdPoint;
 
-        wasDropped = false;
+            transform.DOLocalMove(-attachPoint.localPosition, 0.25f);
+            transform.DOLocalRotateQuaternion(attachPoint.localRotation, 0.25f);
+
+            wasDropped = false;
+        }
     }
 
 
-    void ToggleAllColliders(bool newValue)
+    public void ToggleAllColliders(bool newValue)
     {
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -44,8 +50,10 @@ public class GrabbableObject : Interactable
         }
     }
 
-    public void Drop()
+    public void Drop(PlayerInteraction player)
     {
+        player.heldObject = null;
+
         wasDropped = true;
         transform.parent = null;
         ToggleAllColliders(true);

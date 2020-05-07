@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentInteract = hit.transform.GetComponent<Interactable>();
 
-                if(currentInteract.isInteractable)
+                if(currentInteract.IsInteractable(this) == Interactable.InteractState.Interactable || currentInteract.IsInteractable(this) == Interactable.InteractState.Cooldown)
                 {
                     PlayerCanvas.Instance.ShowInteract(true);
                 }
@@ -52,7 +52,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentInteract != null)
         {
-            if (currentInteract.isInteractable)
+            if (currentInteract.IsInteractable(this) == Interactable.InteractState.Interactable)
             {
                 currentInteract.Interact(this);
             }
@@ -63,17 +63,20 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (heldObject)
         {
-            heldObject.Drop();
-            heldObject = null;
+            heldObject.Drop(this);
         }
     }
 
     public void PickupObject(GrabbableObject newObject)
     {
         if (heldObject)
-            heldObject.Drop();
+            heldObject.Drop(this);
 
-        heldObject = newObject;
-        heldObject.AttachToPlayer(this);
+        newObject.AttachToPlayer(this);
+    }
+
+    public void DropObject()
+    {
+        heldObject = null;
     }
 }
