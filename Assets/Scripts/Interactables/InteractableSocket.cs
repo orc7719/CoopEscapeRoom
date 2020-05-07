@@ -12,10 +12,16 @@ public class InteractableSocket : Interactable
     [SerializeField] SocketTags correctTag = SocketTags.None;
 
     [Header("Output Events")]
-    [SerializeField] ToggleEvent OnSocketUpdated;
+    public ToggleEvent OnSocketUpdated;
     public bool socketCorrect = false;
     
     public SocketableObject socketedObject= null;
+    [SerializeField] Transform objectHighlight;
+
+    private void Start()
+    {
+        objectHighlight = transform.Find("Highlight");
+    }
 
     public override InteractState IsInteractable(PlayerInteraction player)
     {
@@ -45,17 +51,22 @@ public class InteractableSocket : Interactable
             if (targetObject != null)
             {
                 if (targetObject.socketType == socketType)
+                {
                     targetObject.AttachToSocket(player, this);
 
-                if (socketedObject.socketTag == correctTag)
-                {
-                    socketCorrect = true;
+                    if (socketedObject.socketTag == correctTag)
+                    {
+                        socketCorrect = true;
+                    }
+                    else
+                    {
+                        socketCorrect = false;
+                    }
+
                     if (OnSocketUpdated != null)
-                        OnSocketUpdated.Invoke(true);
-                }
-                else
-                {
-                    socketCorrect = false;
+                        OnSocketUpdated.Invoke(socketCorrect);
+
+                    objectHighlight.gameObject.SetActive(false);
                 }
             }
         }
@@ -67,6 +78,8 @@ public class InteractableSocket : Interactable
             socketCorrect = false;
             if (OnSocketUpdated != null)
                 OnSocketUpdated.Invoke(false);
+
+            objectHighlight.gameObject.SetActive(true);
         }
     }
 }
