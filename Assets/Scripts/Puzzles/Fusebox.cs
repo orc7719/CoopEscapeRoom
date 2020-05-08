@@ -6,11 +6,6 @@ public class Fusebox : MonoBehaviour
 {
     [SerializeField] List<InteractableSocket> fuseSockets = new List<InteractableSocket>();
 
-    private void Start()
-    {
-
-    }
-
     private void OnEnable()
     {
         for (int i = 0; i < fuseSockets.Count; i++)
@@ -39,7 +34,5 @@ public class Fusebox : MonoBehaviour
                 break;
             }
         }
-
-        Debug.Log("Fusebox Complete: " + fusesCorrect);
     }
 }

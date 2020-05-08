@@ -2,6 +2,7 @@
 using Mirror;
 using System.Collections.Generic;
 using ScriptableObjectArchitecture;
+using RotaryHeart.Lib.SerializableDictionary;
 
 /*
 	Documentation: https://mirror-networking.com/docs/Guides/NetworkBehaviour.html
@@ -12,13 +13,9 @@ public class NetworkedEventManager : NetworkBehaviour
 {
     public static NetworkedEventManager instance;
 
-    [SerializeField] Dictionary<string, GameEvent> gameEvents = new Dictionary<string, GameEvent>();
-    [SerializeField] GameEvent symbolEvent;
-
-    private void Start()
-    {
-        gameEvents.Add("Symbols_KeypadCorrect", symbolEvent);
-    }
+    [System.Serializable]
+    public class EventDictionary : SerializableDictionaryBase<string, GameEvent> { };
+    [SerializeField] EventDictionary gameEvents;
 
 
     #region Start & Stop Callbacks

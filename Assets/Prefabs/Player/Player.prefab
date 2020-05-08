@@ -586,7 +586,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  symbolEvent: {fileID: 11400000, guid: 7effa3d2b458fe24a816e4f2542d1e74, type: 2}
+  gameEvents:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - Symbols_KeypadCorrect
+    _keys:
+    - Symbols_KeypadCorrect
+    _values:
+    - {fileID: 11400000, guid: 7effa3d2b458fe24a816e4f2542d1e74, type: 2}
 --- !u!1 &9139757332661815863
 GameObject:
   m_ObjectHideFlags: 0
