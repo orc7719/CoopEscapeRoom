@@ -17,7 +17,8 @@ public class InteractableLever : Interactable
     private void Start()
     {
         leverModel = transform.Find("Model");
-        leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMax : rotateDistanceMin, 0, 0), 0);
+        leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMin : rotateDistanceMax, 0, 0), 0);
+        leverEvent.Invoke(isActivated);
     }
 
     public override void Interacted(PlayerInteraction player)
@@ -29,7 +30,7 @@ public class InteractableLever : Interactable
     IEnumerator AnimateLever()
     {
         isInteractable = InteractState.Cooldown;
-        leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMax : rotateDistanceMin, 0, 0), leverCooldown);
+        leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMin : rotateDistanceMax, 0, 0), leverCooldown);
         leverEvent.Invoke(isActivated);
         yield return new WaitForSeconds(leverCooldown);
         isInteractable = InteractState.Interactable;
