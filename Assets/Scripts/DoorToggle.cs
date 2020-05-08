@@ -15,13 +15,13 @@ public class DoorToggle : MonoBehaviour
 
     private void Start()
     {
-        startPos = doorObject.transform.position;
-        startRot = doorObject.transform.rotation;
+        startPos = doorObject.transform.localPosition;
+        startRot = doorObject.transform.localRotation;
     }
 
     public void MoveDoor(bool newValue)
     {
-        doorObject.DOMove(newValue ? targetPos.position : startPos, transitionTime);
-        doorObject.DORotateQuaternion(newValue ? targetPos.rotation : startRot, transitionTime);
+        doorObject.DOLocalMove(newValue ? targetPos.localPosition : startPos, transitionTime);
+        doorObject.DOLocalRotateQuaternion(newValue ? targetPos.localRotation : startRot, transitionTime);
     }
 }

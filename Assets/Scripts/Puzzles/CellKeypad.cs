@@ -15,8 +15,6 @@ public class CellKeypad : MonoBehaviour
     [SerializeField] RawImage[] symbolDisplays;
     [SerializeField] Texture[] symbols;
 
-    [SerializeField] GameEvent outputEvent;
-
     private void Start()
     {
         inputCode = "";
