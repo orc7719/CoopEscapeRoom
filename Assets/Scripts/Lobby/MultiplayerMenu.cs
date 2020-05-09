@@ -10,6 +10,7 @@ public class MultiplayerMenu : MonoBehaviour
     [SerializeField] RoomPlayerItem[] roomPlayers;
 
     [SerializeField] TMP_InputField nameInput;
+    
 
     private void Start()
     {

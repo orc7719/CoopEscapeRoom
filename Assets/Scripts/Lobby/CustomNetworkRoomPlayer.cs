@@ -7,6 +7,7 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
 {
     [Header("Player Info")]
     [SyncVar(hook = nameof(SetName))] public string playerName = "";
+    [SyncVar(hook = nameof(SetRole))] public int roleId = -1;
 
 
     // This is a hook that is invoked on all player objects when entering the room.
@@ -16,7 +17,10 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
         RoomPlayerItem.roomPlayers[index].UpdateReadyButton(isLocalPlayer);
         RoomPlayerItem.roomPlayers[index].UpdateReadyButtonText(isLocalPlayer, false);
 
+        if (isServer)
+            UpdatePlayerRole(index);
 
+        RoomPlayerItem.roomPlayers[index].UpdateRoleButton(isServer && isLocalPlayer);
     }
 
     /// Called when the local player object has been set up.
@@ -24,7 +28,10 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     public override void OnStartLocalPlayer()
     {
         if (isLocalPlayer)
+        {
             CmdUpdatePlayerName(GameManager.Settings.PlayerData.playerName);
+            
+        }
     }
 
     private void OnDestroy()
@@ -50,5 +57,16 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     private void SetName(string oldName, string newName)
     {
         RoomPlayerItem.roomPlayers[index].UpdatePlayerName(newName);
+    }
+
+    
+    void UpdatePlayerRole(int newRole)
+    {
+        roleId = newRole;
+    }
+
+    private void SetRole(int oldRole, int newRole)
+    {
+        RoomPlayerItem.roomPlayers[index].UpdatePlayerRole(newRole);
     }
 }

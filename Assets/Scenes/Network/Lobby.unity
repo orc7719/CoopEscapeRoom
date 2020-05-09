@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 1641099519947579577, guid: 9d93627edc32fcc4184cafedc18b130e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1641099519947579577, guid: 9d93627edc32fcc4184cafedc18b130e,
         type: 3}
@@ -2096,8 +2096,8 @@ MonoBehaviour:
   minPlayers: 2
   roomPlayerPrefab: {fileID: 8634191857220893439, guid: b1126c078a754c342a1b87f0201f61fa,
     type: 3}
-  RoomScene: Assets/Scenes/Lobby.unity
-  GameplayScene: Assets/Scenes/Game.unity
+  RoomScene: Assets/Scenes/Network/Lobby.unity
+  GameplayScene: Assets/Scenes/Network/NetworkControl.unity
   allPlayersReady: 0
   roomSlots: []
 --- !u!4 &1731388377
@@ -2189,7 +2189,7 @@ PrefabInstance:
     - target: {fileID: 1641099519947579577, guid: 9d93627edc32fcc4184cafedc18b130e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1641099519947579577, guid: 9d93627edc32fcc4184cafedc18b130e,
         type: 3}

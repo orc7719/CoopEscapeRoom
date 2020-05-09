@@ -66,4 +66,4 @@ MonoBehaviour:
   readyToBegin: 0
   index: 0
   playerName: 
-  playerRole: 0
+  roleId: -1

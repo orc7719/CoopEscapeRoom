@@ -17,6 +17,8 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleLocal;
     [SerializeField] ToggleEvent onToggleRemote;
 
+    int roleId = 0;
+
     #region Start & Stop Callbacks
 
     /// <summary>
@@ -74,6 +76,12 @@ public class Player : NetworkBehaviour
         ClearPlayer();
         EnablePlayer();
     }
+
+    public void SetRoleId(int newId)
+    {
+        roleId = newId;
+    }
+
 
     void ClearPlayer()
     {

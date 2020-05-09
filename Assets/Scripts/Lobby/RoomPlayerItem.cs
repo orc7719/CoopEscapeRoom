@@ -13,6 +13,8 @@ public class RoomPlayerItem : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     [SerializeField] Button readyButton;
     [SerializeField] TMP_Text buttonText;
+    [SerializeField] GameObject roleButton;
+    [SerializeField] TMP_Text roleText;
 
     bool isReady = false;
 
@@ -28,6 +30,13 @@ public class RoomPlayerItem : MonoBehaviour
         readyButton.interactable = false;
         buttonText.text = "";
         nameText.text = "Waiting for player...";
+        roleText.text = "none";
+        roleButton.SetActive(false);
+    }
+
+    public void UpdateRoleButton(bool newValue)
+    {
+        roleButton.SetActive(newValue);
     }
 
     public void UpdateReadyButton(bool newStatus)
@@ -56,5 +65,15 @@ public class RoomPlayerItem : MonoBehaviour
     public void UpdatePlayerName(string newName)
     {
         nameText.text = newName;
+    }
+
+    public void UpdatePlayerRole(int newRole)
+    {
+        roleText.text = newRole.ToString("00");
+    }
+
+    public void SwapRoles()
+    {
+        CustomNetworkRoomManager.singleton.SwapRoles();
     }
 }
