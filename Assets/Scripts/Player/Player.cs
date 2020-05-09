@@ -20,7 +20,7 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleLocal;
     [SerializeField] ToggleEvent onToggleRemote;
 
-    [SyncVar(hook = nameof(SetRole))] public int roleId = 0;
+    [SyncVar(hook = nameof(SetRole))] public int roleId = -1;
 
     #region Start & Stop Callbacks
 
@@ -57,7 +57,8 @@ public class Player : NetworkBehaviour
     {
         localPlayer = this;
 
-        SceneLoader.Instance.LoadGameScene(roleId, CustomNetworkRoomManager.singleton.startingScene);
+        if (roleId != -1)
+            SceneLoader.Instance.LoadGameScene(roleId, CustomNetworkRoomManager.singleton.startingScene);
     }
 
     /// <summary>
