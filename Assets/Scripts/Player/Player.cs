@@ -13,11 +13,14 @@ public class ToggleEvent : UnityEvent<bool> { }
 
 public class Player : NetworkBehaviour
 {
+
+    public static Player localPlayer;
+
     [SerializeField] ToggleEvent onToggleShared;
     [SerializeField] ToggleEvent onToggleLocal;
     [SerializeField] ToggleEvent onToggleRemote;
 
-    int roleId = 0;
+    [SyncVar(hook = nameof(SetRole))] public int roleId = 0;
 
     #region Start & Stop Callbacks
 
@@ -38,26 +41,31 @@ public class Player : NetworkBehaviour
     /// Called on every NetworkBehaviour when it is activated on a client.
     /// <para>Objects on the host have this function called, as there is a local client on the host. The values of SyncVars on object are guaranteed to be initialized correctly with the latest state from the server when this function is called on the client.</para>
     /// </summary>
-    public override void OnStartClient() { }
+    public override void OnStartClient() { Debug.LogWarning("001 Start Client"); }
 
     /// <summary>
     /// This is invoked on clients when the server has caused this object to be destroyed.
     /// <para>This can be used as a hook to invoke effects or do client specific cleanup.</para>
     /// </summary>
-    public override void OnStopClient() { }
+    public override void OnStopClient() {  }
 
     /// <summary>
     /// Called when the local player object has been set up.
     /// <para>This happens after OnStartClient(), as it is triggered by an ownership message from the server. This is an appropriate place to activate components or functionality that should only be active for the local player, such as cameras and input.</para>
     /// </summary>
-    public override void OnStartLocalPlayer() { }
+    public override void OnStartLocalPlayer()
+    {
+        localPlayer = this;
+
+        SceneLoader.Instance.LoadGameScene(roleId, CustomNetworkRoomManager.singleton.startingScene);
+    }
 
     /// <summary>
     /// This is invoked on behaviours that have authority, based on context and <see cref="NetworkIdentity.hasAuthority">NetworkIdentity.hasAuthority</see>.
     /// <para>This is called after <see cref="OnStartServer">OnStartServer</see> and before <see cref="OnStartClient">OnStartClient.</see></para>
     /// <para>When <see cref="NetworkIdentity.AssignClientAuthority"/> is called on the server, this will be called on the client that owns the object. When an object is spawned with <see cref="NetworkServer.Spawn">NetworkServer.Spawn</see> with a NetworkConnection parameter included, this will be called on the client that owns the object.</para>
     /// </summary>
-    public override void OnStartAuthority() { }
+    public override void OnStartAuthority() { Debug.LogWarning("001 Start Authority"); }
 
     /// <summary>
     /// This is invoked on behaviours when authority is removed.
@@ -78,6 +86,11 @@ public class Player : NetworkBehaviour
     }
 
     public void SetRoleId(int newId)
+    {
+        roleId = newId;
+    }
+
+    public void SetRole(int oldId, int newId)
     {
         roleId = newId;
     }
@@ -109,5 +122,4 @@ public class Player : NetworkBehaviour
         else
             onToggleRemote.Invoke(false);
     }
-
 }

@@ -5,6 +5,9 @@ using Mirror;
 
 public class CustomNetworkRoomManager : NetworkRoomManager
 {
+    [Header("Game Scenes")]
+    public int startingScene;
+
     public static new CustomNetworkRoomManager singleton { get { return NetworkManager.singleton as CustomNetworkRoomManager; } }
 
     // for users to apply settings from their room player object to their in-game player object
@@ -21,9 +24,19 @@ public class CustomNetworkRoomManager : NetworkRoomManager
         CustomNetworkRoomPlayer roomPlayerScript = roomPlayer.GetComponent<CustomNetworkRoomPlayer>();
         Player scenePlayerScript = gamePlayer.GetComponent<Player>();
 
+        Debug.Log("Room index: " + roomPlayerScript.index +", ID: " +  roomPlayerScript.roleId);
         scenePlayerScript.SetRoleId(roomPlayerScript.roleId);
 
         return true;
+    }
+
+    /// <summary>
+    /// This is called on the client when the client is finished loading a new networked scene.
+    /// </summary>
+    /// <param name="conn">The connection that finished loading a new networked scene.</param>
+    public override void OnRoomClientSceneChanged(NetworkConnection conn)
+    {
+
     }
 
     public void SwapRoles()

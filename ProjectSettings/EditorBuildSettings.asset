@@ -11,25 +11,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Network/NetworkControl.unity
     guid: 7041e84c29d83f742b9cc4d365502006
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/ControlRoom.unity
     guid: e7f842b02b0bd2e4494ea2129ba6dbf1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 01 - Symbols.unity
     guid: 6ba50dd635c27d14fb957d8d55e3c5ef
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 02 - Maze.unity
     guid: 0b025c70d011c5d4f86d7f81815593fe
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 03 - Wires.unity
     guid: 1c77103cb13b2fe4cbdc59adcd6fdca8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 04 - Pipes.unity
     guid: 0c449cbcef3a9a4448ba4b1bccd36ba3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 05 - Difference.unity
     guid: dc40dd760f8cbf34197b4222aa4babd5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 06 - Sequence.unity
     guid: 3f4707e68b41b6340b02df2c4022352d
   m_configObjects:

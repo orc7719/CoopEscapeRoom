@@ -2100,6 +2100,14 @@ MonoBehaviour:
   GameplayScene: Assets/Scenes/Network/NetworkControl.unity
   allPlayersReady: 0
   roomSlots: []
+  commanderScene: Assets/Scenes/Puzzle Prototypes/ControlRoom.unity
+  survivorScenes:
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 01 - Symbols.unity
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 02 - Maze.unity
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 03 - Wires.unity
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 04 - Pipes.unity
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 05 - Difference.unity
+  - Assets/Scenes/Puzzle Prototypes/Puzzle 06 - Sequence.unity
 --- !u!4 &1731388377
 Transform:
   m_ObjectHideFlags: 0

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _references:
     _prefabs:
-      manager: {fileID: 0}
+      manager: {fileID: 7098276479991245947, guid: 1c12173f0ca60e745a61a4c12ccdb142,
+        type: 3}
