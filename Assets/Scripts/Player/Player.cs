@@ -83,7 +83,6 @@ public class Player : NetworkBehaviour
         Cursor.visible = false;
 
         ClearPlayer();
-        EnablePlayer();
     }
 
     public void SetRoleId(int newId)

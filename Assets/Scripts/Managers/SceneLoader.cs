@@ -16,5 +16,6 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         string sceneName = roleToLoad == 0 ? commanderScene : survivorScenes[sceneToLoad];
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
     }
 }
