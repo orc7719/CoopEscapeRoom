@@ -21,7 +21,6 @@ public class RoomPlayerItem : MonoBehaviour
     private void Start()
     {
         roomPlayers[playerIndex] = this;
-
         ResetPlayerItem();
     }
 

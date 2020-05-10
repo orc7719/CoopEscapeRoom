@@ -11,14 +11,7 @@ public class SocketableObject : GrabbableObject
 
     public override InteractState IsInteractable(PlayerInteraction player)
     {
-        if(!isSocketed)
-        {
-            return isInteractable;
-        }
-        else
-        {
-            return InteractState.None;
-        }
+        return isSocketed ? InteractState.None : isInteractable;
     }
 
     public void AttachToSocket(PlayerInteraction player, InteractableSocket socket)

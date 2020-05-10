@@ -13,7 +13,6 @@ public class ToggleEvent : UnityEvent<bool> { }
 
 public class Player : NetworkBehaviour
 {
-
     public static Player localPlayer;
 
     [SerializeField] ToggleEvent onToggleShared;
@@ -41,7 +40,7 @@ public class Player : NetworkBehaviour
     /// Called on every NetworkBehaviour when it is activated on a client.
     /// <para>Objects on the host have this function called, as there is a local client on the host. The values of SyncVars on object are guaranteed to be initialized correctly with the latest state from the server when this function is called on the client.</para>
     /// </summary>
-    public override void OnStartClient() { Debug.LogWarning("001 Start Client"); }
+    public override void OnStartClient() { }
 
     /// <summary>
     /// This is invoked on clients when the server has caused this object to be destroyed.
@@ -66,7 +65,7 @@ public class Player : NetworkBehaviour
     /// <para>This is called after <see cref="OnStartServer">OnStartServer</see> and before <see cref="OnStartClient">OnStartClient.</see></para>
     /// <para>When <see cref="NetworkIdentity.AssignClientAuthority"/> is called on the server, this will be called on the client that owns the object. When an object is spawned with <see cref="NetworkServer.Spawn">NetworkServer.Spawn</see> with a NetworkConnection parameter included, this will be called on the client that owns the object.</para>
     /// </summary>
-    public override void OnStartAuthority() { Debug.LogWarning("001 Start Authority"); }
+    public override void OnStartAuthority() { }
 
     /// <summary>
     /// This is invoked on behaviours when authority is removed.
@@ -75,7 +74,6 @@ public class Player : NetworkBehaviour
     public override void OnStopAuthority() { }
 
     #endregion
-
 
     private void Start()
     {
@@ -94,7 +92,6 @@ public class Player : NetworkBehaviour
     {
         roleId = newId;
     }
-
 
     void ClearPlayer()
     {

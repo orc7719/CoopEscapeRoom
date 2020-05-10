@@ -11,7 +11,6 @@ public class MultiplayerMenu : MonoBehaviour
 
     [SerializeField] TMP_InputField nameInput;
     [SerializeField] TMP_Dropdown sceneSelect;
-    
 
     private void Start()
     {

@@ -7,7 +7,6 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] UnityEvent OnInteract;
 
-
     public enum InteractState { None, Locked, Interactable, Cooldown}
     public InteractState isInteractable = InteractState.Interactable;
 

@@ -16,7 +16,6 @@ public class CameraController : MonoBehaviour
     float xRot;
     Quaternion currentRotation;
 
-
     private void Start()
     {
         currentRotation = cam.transform.localRotation;

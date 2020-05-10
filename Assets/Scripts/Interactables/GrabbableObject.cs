@@ -11,7 +11,6 @@ public class GrabbableObject : Interactable
     Quaternion startRot;
     Collider[] colliders;
 
-
     private void Start()
     {
         colliders = GetComponentsInChildren<Collider>();
@@ -40,7 +39,6 @@ public class GrabbableObject : Interactable
             wasDropped = false;
         }
     }
-
 
     public void ToggleAllColliders(bool newValue)
     {

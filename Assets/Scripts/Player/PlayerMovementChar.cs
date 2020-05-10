@@ -9,14 +9,11 @@ public class PlayerMovementChar : MonoBehaviour
 
     [SerializeField] float speed = 10.0f;
     [SerializeField] float sprintMulti = 1.5f;
-    [SerializeField] float maxVelocityChange = 8.0f;
 
     [SerializeField] float jumpHeight = 3.0f;
     [SerializeField] float gravity = 9.81f;
 
     bool isSprinting = false;
-
-    [SerializeField] LayerMask groundLayers;
 
     private Vector2 inputVector;
     Vector3 fixedVelocity;

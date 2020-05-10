@@ -35,7 +35,6 @@ public class CellKeypad : MonoBehaviour
 
         inputCode += newCode;
         
-
         if(inputCode.Length >= 4)
         {
             if(inputCode == correctPasscode)
