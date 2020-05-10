@@ -13,6 +13,8 @@ public class GraphicSettings : MonoBehaviour
 
     public TMP_Dropdown graphicsDropDown;
 
+    public TMP_Dropdown AntiAliasingDropDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class GraphicSettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //quality settings if statements
+
         if (graphicsDropDown.value == 0) {
             SetUltra();
         }
@@ -46,9 +50,25 @@ public class GraphicSettings : MonoBehaviour
             SetVeryLow();
         }
 
+        //Anti Aliasing if statements
+        if (AntiAliasingDropDown.value == 0) {
+            disabledAnti();
+        }
+
+        if (AntiAliasingDropDown.value == 1) {
+            twoTimesAnti();
+        }
+
+        if (AntiAliasingDropDown.value == 2) {
+            fourTimesAnti();
+        }
+
+        if (AntiAliasingDropDown.value == 3) {
+            eightTimesAnti();
+        }
         
     }
-
+    //All Quality Settings
     public void SetUltra() {
         QualitySettings.SetQualityLevel(5, true);
 
@@ -83,5 +103,22 @@ public class GraphicSettings : MonoBehaviour
         QualitySettings.SetQualityLevel(0, true);
 
         currentGraphics = QualitySettings.GetQualityLevel();
+    }
+
+    //All Anti Aliasing Settings
+    public void disabledAnti() {
+        QualitySettings.antiAliasing = 0;
+    }
+
+    public void twoTimesAnti() { //2X Multi Sampling
+        QualitySettings.antiAliasing = 2;
+    }
+
+    public void fourTimesAnti() { //4X Multi Sampling
+        QualitySettings.antiAliasing = 4;
+    }
+
+    public void eightTimesAnti() { //8X Multi Sampling
+        QualitySettings.antiAliasing = 8;
     }
 }
