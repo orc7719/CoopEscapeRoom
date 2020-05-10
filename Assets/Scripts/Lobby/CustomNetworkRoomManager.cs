@@ -27,6 +27,7 @@ public class CustomNetworkRoomManager : NetworkRoomManager
         Debug.Log("Room index: " + roomPlayerScript.index +", ID: " +  roomPlayerScript.roleId);
         scenePlayerScript.SetRoleId(roomPlayerScript.roleId);
 
+
         return true;
     }
 
@@ -50,6 +51,16 @@ public class CustomNetworkRoomManager : NetworkRoomManager
 
             player01.roleId = player02.roleId;
             player02.roleId = tempRole;
+        }
+    }
+
+    public void ChangeStartingScene(int newScene)
+    {
+       
+        startingScene = newScene;
+        for (int i = 0; i < roomSlots.Count; i++)
+        {
+            roomSlots[i].GetComponent<CustomNetworkRoomPlayer>().startScene = newScene;
         }
     }
 }

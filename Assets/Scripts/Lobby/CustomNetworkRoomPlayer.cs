@@ -8,6 +8,7 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     [Header("Player Info")]
     [SyncVar(hook = nameof(SetName))] public string playerName = "";
     [SyncVar(hook = nameof(SetRole))] public int roleId = -1;
+    [SyncVar(hook = nameof(SetScene))] public int startScene = -1;
 
 
     // This is a hook that is invoked on all player objects when entering the room.
@@ -18,7 +19,10 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
         RoomPlayerItem.roomPlayers[index].UpdateReadyButtonText(isLocalPlayer, false);
 
         if (isServer)
+        {
             UpdatePlayerRole(index);
+            UpdateStartScene(CustomNetworkRoomManager.singleton.startingScene);
+        }
 
         RoomPlayerItem.roomPlayers[index].UpdateRoleButton(isServer && isLocalPlayer);
     }
@@ -30,7 +34,7 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
         if (isLocalPlayer)
         {
             CmdUpdatePlayerName(GameManager.Settings.PlayerData.playerName);
-            
+
         }
     }
 
@@ -59,7 +63,7 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
         RoomPlayerItem.roomPlayers[index].UpdatePlayerName(newName);
     }
 
-    
+
     void UpdatePlayerRole(int newRole)
     {
         roleId = newRole;
@@ -68,5 +72,17 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
     private void SetRole(int oldRole, int newRole)
     {
         RoomPlayerItem.roomPlayers[index].UpdatePlayerRole(newRole);
+    }
+
+    void UpdateStartScene(int newScene)
+    {
+        startScene = newScene;
+        
+    }
+
+    void SetScene(int oldScene, int newScene)
+    {
+        RoomPlayerItem.roomPlayers[index].UpdateStartScene(newScene);
+        CustomNetworkRoomManager.singleton.startingScene = newScene;
     }
 }

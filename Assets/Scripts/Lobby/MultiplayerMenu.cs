@@ -10,6 +10,7 @@ public class MultiplayerMenu : MonoBehaviour
     [SerializeField] RoomPlayerItem[] roomPlayers;
 
     [SerializeField] TMP_InputField nameInput;
+    [SerializeField] TMP_Dropdown sceneSelect;
     
 
     private void Start()
@@ -20,11 +21,13 @@ public class MultiplayerMenu : MonoBehaviour
     private void OnEnable()
     {
         nameInput.onEndEdit.AddListener(UpdateName);
+        sceneSelect.onValueChanged.AddListener(ChangeStartScene);
     }
 
     private void OnDisable()
     {
         nameInput.onEndEdit.RemoveListener(UpdateName);
+        sceneSelect.onValueChanged.RemoveListener(ChangeStartScene);
     }
 
     void UpdateName(string newName)
@@ -53,6 +56,11 @@ public class MultiplayerMenu : MonoBehaviour
         {
             manager.StopHost();
         }
+    }
+
+    public void ChangeStartScene(int newScene)
+    {
+        manager.ChangeStartingScene(newScene);
     }
 
     public void ShowLobbyUI()

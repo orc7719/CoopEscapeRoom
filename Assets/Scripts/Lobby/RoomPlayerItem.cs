@@ -72,6 +72,11 @@ public class RoomPlayerItem : MonoBehaviour
         roleText.text = newRole.ToString("00");
     }
 
+    public void UpdateStartScene(int newScene)
+    {
+
+    }
+
     public void SwapRoles()
     {
         CustomNetworkRoomManager.singleton.SwapRoles();
