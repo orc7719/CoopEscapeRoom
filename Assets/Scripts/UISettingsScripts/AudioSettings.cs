@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-//using UnityEngine.UIElements;
-using TMPro;
 using UnityEngine.Audio;
 
 public class AudioSettings : MonoBehaviour
