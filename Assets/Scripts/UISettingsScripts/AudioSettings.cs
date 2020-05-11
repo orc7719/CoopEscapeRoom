@@ -8,50 +8,37 @@ using UnityEngine.Audio;
 
 public class AudioSettings : MonoBehaviour
 {
-    [Header("The Sliders")]
-    public Slider masterSlider;
-    public Slider SFXSlider;
-    public Slider MusicSlider;
-    
-    [Header("The Value Numbers"), Range(0, 1)]
-    public float masterNum;
-    [Range(0, 1)]
-    public float SFXNum;
-    [Range(0, 1)]
-    public float MusicNum;
-
-    [Header("Audio Sources")]
-    
-    public AudioSource SFXSource;
-    public AudioSource musicSource;
+    [Header("Audio Mixer")]
+    public AudioMixer Master;
 
     // Start is called before the first frame update
     void Start()
     {
-       
        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        AudioListener.volume = masterSlider.value;
-
-        SFXSource.volume = SFXSlider.value;
-
-        musicSource.volume = MusicSlider.value;        
+        
+              
     }
 
-    public void changeMaster() {
-        masterNum = masterSlider.value;
+        public void adjustMasterVolume(float soundLevel) {
+        Master.SetFloat("MasterVol", soundLevel);
+       
     }
 
-    public void changeSFX() {
-        SFXNum = SFXSlider.value;
+        public void adjustSFXVolume(float soundLevel) {
+        Master.SetFloat("SFXVol", soundLevel);
     }
 
-    public void changeMusic() {
-        MusicNum = MusicSlider.value;
+        public void adjustMusicVolume(float soundLevel) {
+        Master.SetFloat("MusicVol", soundLevel);
     }
+
+    public void adjustAmbienceVolume(float soundLevel) {
+        Master.SetFloat("AmbienceVol", soundLevel);
+    }
+    
 }
