@@ -539,90 +539,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 328242102, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618865718, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618865718, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618865718, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934977017, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934977017, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 205548154964050086, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608278572541941638, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608278572541941638, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727642619891041309, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727642619891041309, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3149163936404141864, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3149163936404141864, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3149163936404141864, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235371321727238044, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235371321727238044, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235371321727238044, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5789710464075664176, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6031577879333103139, guid: a22d8699647a3d24782ffa2e7880590e,
         type: 3}
       propertyPath: m_Name
@@ -735,11 +651,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697987514908605301, guid: a22d8699647a3d24782ffa2e7880590e,
         type: 3}
-      propertyPath: masterSource
-      value: 
-      objectReference: {fileID: 566833628}
-    - target: {fileID: 8697987514908605301, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
       propertyPath: SFXSource
       value: 
       objectReference: {fileID: 252672686}
@@ -748,21 +659,6 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 284676650}
-    - target: {fileID: 8697987514908605301, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: masterNum
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697987514908605301, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: SFXNum
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697987514908605301, guid: a22d8699647a3d24782ffa2e7880590e,
-        type: 3}
-      propertyPath: MusicNum
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a22d8699647a3d24782ffa2e7880590e, type: 3}
 --- !u!1 &918100704
