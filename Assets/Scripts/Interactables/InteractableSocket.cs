@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum SocketTypes { Generic, Fuse }
-public enum SocketTags { None, Red, Green, Blue, Yellow, Orange, Purple, Cyan, Pink }
+public enum SocketTags { None, Red, Green, Blue, Yellow, Orange, Purple, Black, Pink }
 
 public class InteractableSocket : Interactable
 {
@@ -26,10 +26,13 @@ public class InteractableSocket : Interactable
     public override InteractState IsInteractable(PlayerInteraction player)
     {
         if (player.heldObject == null && socketedObject == null)
-            return InteractState.Locked;
+            return InteractState.None;
 
         if (player.heldObject == null && socketedObject != null)
             return isInteractable;
+
+        if (player.heldObject != null && socketedObject != null)
+            return InteractState.Locked;
 
         SocketableObject targetObject = player.heldObject as SocketableObject;
         if (targetObject != null)

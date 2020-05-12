@@ -52,6 +52,8 @@ public class GrabbableObject : Interactable
     {
         player.heldObject = null;
 
+        transform.DOComplete();
+
         wasDropped = true;
         transform.parent = null;
         ToggleAllColliders(true);
