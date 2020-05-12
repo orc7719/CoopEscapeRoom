@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  enableOnSpawn: 1
   onToggleShared:
     m_PersistentCalls:
       m_Calls: []
@@ -546,9 +547,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   sprintMulti: 1.65
-  maxVelocityChange: 8
   jumpHeight: 3
   gravity: 9.81
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 256

@@ -13,6 +13,7 @@ public class ToggleEvent : UnityEvent<bool> { }
 
 public class Player : NetworkBehaviour
 {
+    [SerializeField] bool enableOnSpawn = false;
     public static Player localPlayer;
 
     [SerializeField] ToggleEvent onToggleShared;
@@ -81,6 +82,9 @@ public class Player : NetworkBehaviour
         Cursor.visible = false;
 
         ClearPlayer();
+
+        if (enableOnSpawn)
+            EnablePlayer();
     }
 
     public void SetRoleId(int newId)
