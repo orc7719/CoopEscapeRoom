@@ -5,6 +5,10 @@ using UnityEngine;
 public class Fusebox : MonoBehaviour
 {
     [SerializeField] List<InteractableSocket> fuseSockets = new List<InteractableSocket>();
+    bool boxStatus = false;
+
+    [SerializeField] string onEvent;
+    [SerializeField] string offEvent;
 
     private void OnEnable()
     {
@@ -34,5 +38,23 @@ public class Fusebox : MonoBehaviour
                 break;
             }
         }
+
+
+        if (boxStatus != fusesCorrect)
+        {
+            boxStatus = fusesCorrect;
+
+
+            if(fusesCorrect)
+            {
+                NetworkedEventManager.instance.TriggerEvent(onEvent);
+            }
+            else
+            {
+                NetworkedEventManager.instance.TriggerEvent(offEvent);
+            }
+        }
+
+
     }
 }

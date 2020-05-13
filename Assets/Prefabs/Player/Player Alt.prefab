@@ -529,10 +529,46 @@ MonoBehaviour:
     isExpanded: 1
     _keyValues:
     - Symbols_KeypadCorrect
+    - Wires_ActivateFuse01
+    - Wires_ActivateFuse02
+    - Wires_ActivateFuse03
+    - Wires_ActivateFuse04
+    - Wires_Fuze01_StatusOn
+    - Wires_Fuze01_StatusOff
+    - Wires_Fuze02_StatusOn
+    - Wires_Fuze02_StatusOff
+    - Wires_Fuze03_StatusOn
+    - Wires_Fuze03_StatusOff
+    - Wires_Fuze04_StatusOn
+    - Wires_Fuze04_StatusOff
     _keys:
     - Symbols_KeypadCorrect
+    - Wires_ActivateFuse01
+    - Wires_ActivateFuse02
+    - Wires_ActivateFuse03
+    - Wires_ActivateFuse04
+    - Wires_Fuze01_StatusOn
+    - Wires_Fuze01_StatusOff
+    - Wires_Fuze02_StatusOn
+    - Wires_Fuze02_StatusOff
+    - Wires_Fuze03_StatusOn
+    - Wires_Fuze03_StatusOff
+    - Wires_Fuze04_StatusOn
+    - Wires_Fuze04_StatusOff
     _values:
     - {fileID: 11400000, guid: 7effa3d2b458fe24a816e4f2542d1e74, type: 2}
+    - {fileID: 11400000, guid: 144639c626038714dba60917c9267973, type: 2}
+    - {fileID: 11400000, guid: 12937d6720b5fa6428b299c54b9b1298, type: 2}
+    - {fileID: 11400000, guid: bffc9cf2c14e16b49bb6152373e9b0e9, type: 2}
+    - {fileID: 11400000, guid: d7a2a0aebe022a04e87cf4461087c15d, type: 2}
+    - {fileID: 11400000, guid: 36af2fbd43e945c459837d0234f91357, type: 2}
+    - {fileID: 11400000, guid: 3ed3025b4146e8842a54a626adcd15c7, type: 2}
+    - {fileID: 11400000, guid: df764df4c2a55dd408d067b83073eacd, type: 2}
+    - {fileID: 11400000, guid: ba9d0045ae4c87249a8ba664f8d65ac4, type: 2}
+    - {fileID: 11400000, guid: 72e4c17c74a11174fb1f46dde7a97002, type: 2}
+    - {fileID: 11400000, guid: 28cfb0435f3ef9145836e0b9e1fa299f, type: 2}
+    - {fileID: 11400000, guid: 80a818c0fbbc75c4f91e256eaa9b46ef, type: 2}
+    - {fileID: 11400000, guid: 87349bc0e6506c84eb7880874024e2d0, type: 2}
 --- !u!114 &9092728453389154018
 MonoBehaviour:
   m_ObjectHideFlags: 0

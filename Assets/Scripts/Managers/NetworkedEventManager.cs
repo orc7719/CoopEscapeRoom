@@ -17,7 +17,6 @@ public class NetworkedEventManager : NetworkBehaviour
     public class EventDictionary : SerializableDictionaryBase<string, GameEvent> { };
     [SerializeField] EventDictionary gameEvents;
 
-
     #region Start & Stop Callbacks
 
     /// <summary>
@@ -85,11 +84,11 @@ public class NetworkedEventManager : NetworkBehaviour
         RpcTiggerEvent(gameEventKey);
         
     }
+    
 
     [ClientRpc]
     void RpcTiggerEvent(string gameEventKey)
     {
         gameEvents[gameEventKey].Raise();
     }
-
 }
