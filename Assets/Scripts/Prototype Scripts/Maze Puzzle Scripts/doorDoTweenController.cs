@@ -6,7 +6,7 @@ using DG.Tweening;
 public class doorDoTweenController : MonoBehaviour
 {
 
-    [Range(0.5f, 5f), SerializeField] private float _movementDuration = 1.0f;
+    [Range(0.5f, 20f), SerializeField] private float _movementDuration = 1.0f;
 
 
     private DoTweenType _doTweenType = DoTweenType.openDoor;
@@ -23,9 +23,9 @@ public class doorDoTweenController : MonoBehaviour
         if (_doTweenType == DoTweenType.openDoor) {
             
             
-            //transform.DORotate((targetRotation), _movementDuration, RotateMode.Fast);
+            transform.DORotate((targetRotation), _movementDuration, RotateMode.Fast);
 
-            transform.DOMoveY(-10, _movementDuration);
+            
         }
     }
 }
