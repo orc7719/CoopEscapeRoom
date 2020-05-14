@@ -34,20 +34,15 @@ public class SceneLoader : Singleton<SceneLoader>
 
     public void LoadGameScene(string sceneToLoad)
     {
-        Debug.Log("Load");
         StartCoroutine("ChangeGameScene", sceneToLoad);
     }
 
     IEnumerator ChangeGameScene(string newScene)
     {
-        Debug.Log("Starting Load");
-
         if (isLoading)
             yield break;
 
         isLoading = true;
-
-        currentScene = SceneManager.GetActiveScene().name;
 
         //Fade to black
 
@@ -56,25 +51,25 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             AsyncOperation unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
 
-            while (!unloadAsync.isDone)
-            {
-                yield return null;
-            }
+            yield return unloadAsync;
         }
 
         //Load new scene
         AsyncOperation loadAsync = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
         loadAsync.allowSceneActivation = false;
-        newActiveScene = "";
+        newActiveScene = SceneManager.GetSceneByPath(newScene).name;
 
         while (!loadAsync.isDone)
         {
             if(loadAsync.progress >= 0.9f)
             {
                 loadAsync.allowSceneActivation = true;
+                
             }
             yield return null;
         }
+
+        currentScene = newScene;
 
         //Fade from black
         isLoading = false;
@@ -82,18 +77,11 @@ public class SceneLoader : Singleton<SceneLoader>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Scene Loaded: " + scene.name + ", Index: " + scene.buildIndex);
-
         if (newActiveScene == "")
             return;
 
-        Debug.Log("Is active scene");
-
-        Debug.Log("New Active Scene: " + newActiveScene + ", Loaded Scene: " + scene);
-
-        if (SceneManager.GetSceneByName(newActiveScene) == scene)
+        if (SceneManager.GetSceneByName(newActiveScene).name == scene.name)
         {
-            Debug.Log("Setting active scene");
             SceneManager.SetActiveScene(scene);
         }
 

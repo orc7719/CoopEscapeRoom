@@ -41,24 +41,23 @@ public class PlayerMovement : MonoBehaviour
     {
         
         isSprinting = value.Get<float>() == 1;
-        Debug.Log(isSprinting);
     }
 
     private void FixedUpdate()
     {
-            targetVelocity = transform.TransformDirection(fixedVelocity);
-            targetVelocity *= isSprinting? sprintSpeed : speed;
+        targetVelocity = transform.TransformDirection(fixedVelocity);
+        targetVelocity *= isSprinting ? sprintSpeed : speed;
 
         float maxSpeed = isSprinting ? sprintSpeed : speed;
 
-            velocity = rgdbody.velocity;
-            Vector3 velocityChange = targetVelocity - velocity;
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxSpeed, maxSpeed);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxSpeed, maxSpeed);
-            velocityChange.y = 0.0f;
+        velocity = rgdbody.velocity;
+        Vector3 velocityChange = targetVelocity - velocity;
+        velocityChange.x = Mathf.Clamp(velocityChange.x, -maxSpeed, maxSpeed);
+        velocityChange.z = Mathf.Clamp(velocityChange.z, -maxSpeed, maxSpeed);
+        velocityChange.y = 0.0f;
 
-            rgdbody.AddForce(velocityChange, ForceMode.VelocityChange);
-        
+        rgdbody.AddForce(velocityChange, ForceMode.VelocityChange);
+
 
         rgdbody.AddForce(new Vector3(0, -gravity * rgdbody.mass, 0));
     }
