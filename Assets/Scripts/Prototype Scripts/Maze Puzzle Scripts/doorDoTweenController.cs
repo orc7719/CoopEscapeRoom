@@ -11,6 +11,8 @@ public class doorDoTweenController : MonoBehaviour
 
     private DoTweenType _doTweenType = DoTweenType.openDoor;
 
+    public Vector3 targetRotation;
+
     private enum DoTweenType {
         openDoor
         
@@ -21,7 +23,9 @@ public class doorDoTweenController : MonoBehaviour
         if (_doTweenType == DoTweenType.openDoor) {
             
             
-            transform.DORotate(new Vector3(0, 0, 0), _movementDuration, RotateMode.Fast);
+            //transform.DORotate((targetRotation), _movementDuration, RotateMode.Fast);
+
+            transform.DOMoveY(-10, _movementDuration);
         }
     }
 }
