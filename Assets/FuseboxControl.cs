@@ -12,6 +12,20 @@ public class FuseboxControl : MonoBehaviour
     public void ActivateFusebox(int fuseboxId)
     {
         statusText[fuseboxId].text = fuseboxStatus[fuseboxId] ? "Online" : "Offline";
+
+        bool allComplete = true;
+
+        for (int i = 0; i < fuseboxStatus.Length; i++)
+        {
+            if (fuseboxStatus[i] == false)
+            {
+                allComplete = false;
+                break;
+            }
+        }
+
+        if (allComplete)
+            NetworkedEventManager.instance.TriggerEvent("Wires_Completed");
     }
 
     public void UpdateFusebox01(bool newValue)
