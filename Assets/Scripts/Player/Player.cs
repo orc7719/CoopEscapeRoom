@@ -2,6 +2,7 @@
 using Mirror;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 /*
 	Documentation: https://mirror-networking.com/docs/Guides/NetworkBehaviour.html
@@ -13,6 +14,9 @@ public class ToggleEvent : UnityEvent<bool> { }
 
 public class Player : NetworkBehaviour
 {
+    public PlayerInput playerInput;
+
+
     [SerializeField] bool enableOnSpawn = false;
     public static Player localPlayer;
 
@@ -78,8 +82,8 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        playerInput = GetComponent<PlayerInput>();
+        PlayerCanvas.Instance.HideMenu();
 
         ClearPlayer();
 
@@ -122,5 +126,15 @@ public class Player : NetworkBehaviour
             onToggleLocal.Invoke(false);
         else
             onToggleRemote.Invoke(false);
+    }
+
+    void OnPause()
+    {
+        PlayerCanvas.Instance.ShowMenu();
+    }
+
+    void OnUnpause()
+    {
+        PlayerCanvas.Instance.HideMenu();
     }
 }
