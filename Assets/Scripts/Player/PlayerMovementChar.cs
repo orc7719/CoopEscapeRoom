@@ -13,6 +13,18 @@ public class PlayerMovementChar : MonoBehaviour
     [SerializeField] float jumpHeight = 3.0f;
     [SerializeField] float gravity = 9.81f;
 
+    [Header("Footstep Audio")]
+    [SerializeField] float stepDistance = 0.5f;
+    [SerializeField] AudioSource footstepSource;
+    [SerializeField] AudioClip[] footstepWalkingSounds;
+    [SerializeField] AudioClip[] footstepRunningSounds;
+
+    float walkDistance;
+    Vector3 lastStepPos;
+
+    [Header("Jump Audio")]
+    [SerializeField] AudioClip[] jumpSounds;
+
     bool isSprinting = false;
 
     private Vector2 inputVector;
@@ -23,6 +35,7 @@ public class PlayerMovementChar : MonoBehaviour
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        lastStepPos = transform.position;
     }
 
     void OnMovement(InputValue value)
@@ -34,7 +47,10 @@ public class PlayerMovementChar : MonoBehaviour
     void OnJump()
     {
         if (charController.isGrounded)
+        {
             yVelocity = jumpHeight;
+            footstepSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
+        }
     }
 
     void OnSprint(InputValue value)
@@ -57,5 +73,29 @@ public class PlayerMovementChar : MonoBehaviour
 
         playerVelocity.y = yVelocity;
         charController.Move(playerVelocity * Time.deltaTime);
+
+        if (charController.isGrounded)
+            if (playerVelocity.x != 0 || playerVelocity.z != 0)
+                DoAudio();
+    }
+
+    void DoAudio()
+    {
+        walkDistance += Vector3.Distance(transform.position, lastStepPos);
+        lastStepPos = transform.position;
+
+        if (walkDistance >= stepDistance)
+        {
+            walkDistance = 0;
+            AudioClip stepSound;
+
+
+            if (isSprinting)
+                stepSound = footstepRunningSounds[Random.Range(0, footstepRunningSounds.Length)];
+            else
+                stepSound = footstepWalkingSounds[Random.Range(0, footstepWalkingSounds.Length)];
+
+            footstepSource.PlayOneShot(stepSound);
+        }
     }
 }
