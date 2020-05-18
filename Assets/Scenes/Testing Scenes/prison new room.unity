@@ -6190,7 +6190,7 @@ PrefabInstance:
     - target: {fileID: 23815349926970572, guid: 43d31ca34242da646abe976e8356ad1a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d31ca34242da646abe976e8356ad1a, type: 3}
@@ -6403,7 +6403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorObject: {fileID: 1183614123}
   targetPos: {fileID: 968195147}
-  doorStatus: 1
+  doorStatus: 0
   transitionTime: 2
 --- !u!64 &1183614127
 MeshCollider:
