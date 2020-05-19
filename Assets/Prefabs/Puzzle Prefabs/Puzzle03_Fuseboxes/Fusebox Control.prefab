@@ -8490,7 +8490,7 @@ PrefabInstance:
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateFuseBox
+      value: ActivateFusebox
       objectReference: {fileID: 0}
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
@@ -8635,7 +8635,7 @@ PrefabInstance:
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateFuseBox
+      value: ActivateFusebox
       objectReference: {fileID: 0}
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
@@ -8795,7 +8795,7 @@ PrefabInstance:
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateFuseBox
+      value: ActivateFusebox
       objectReference: {fileID: 0}
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
@@ -8940,7 +8940,7 @@ PrefabInstance:
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateFuseBox
+      value: ActivateFusebox
       objectReference: {fileID: 0}
     - target: {fileID: 7816038772040840717, guid: abf322d0af7943e42b5bae3349f6186c,
         type: 3}

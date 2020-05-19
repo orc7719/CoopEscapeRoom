@@ -14,11 +14,15 @@ public class InteractableLever : Interactable
 
     bool isActivated = false;
 
+    [SerializeField] AudioClip interactSound;
+    AudioSource audioSource;
+
     private void Start()
     {
         leverModel = transform.Find("Model");
         leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMin : rotateDistanceMax, 0, 0), 0);
         leverEvent.Invoke(isActivated);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Interacted(PlayerInteraction player)
@@ -29,6 +33,10 @@ public class InteractableLever : Interactable
 
     IEnumerator AnimateLever()
     {
+        if (interactSound != null)
+            audioSource.PlayOneShot(interactSound);
+
+
         isInteractable = InteractState.Cooldown;
         leverModel.DOLocalRotateQuaternion(Quaternion.Euler(isActivated ? rotateDistanceMin : rotateDistanceMax, 0, 0), leverCooldown);
         leverEvent.Invoke(isActivated);

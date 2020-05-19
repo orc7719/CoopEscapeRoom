@@ -12,10 +12,13 @@ public class InteractableSceneDoor : Interactable
     [SerializeField] Transform doorTarget;
     Transform model;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip openSound;
 
     private void Start()
     {
         model = transform.Find("Model");
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override InteractState IsInteractable(PlayerInteraction player)
@@ -30,6 +33,9 @@ public class InteractableSceneDoor : Interactable
 
     IEnumerator ChangeSceneAnim()
     {
+        if (openSound != null)
+            audioSource.PlayOneShot(openSound);
+
         isInteractable = InteractState.Cooldown;
 
         model.DOLocalMove(doorTarget.localPosition, doorTime);

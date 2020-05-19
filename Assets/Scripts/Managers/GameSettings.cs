@@ -10,6 +10,7 @@ public class GameSettings : ScriptableSingleton<GameSettings>
     public class PlayerInfo
     {
         public string playerName = "Player";
+        public float sensitivity = 1;
     }
 
     [SerializeField]

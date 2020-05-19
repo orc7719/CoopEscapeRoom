@@ -26,6 +26,10 @@ public class FuseboxControl : MonoBehaviour
 
         if (allComplete)
             NetworkedEventManager.instance.TriggerEvent("Wires_Completed");
+
+        //Demo stuff
+        if(allComplete)
+            NetworkedEventManager.instance.TriggerEvent("Demo_End");
     }
 
     public void UpdateFusebox01(bool newValue)

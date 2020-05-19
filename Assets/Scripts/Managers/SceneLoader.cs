@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : Singleton<SceneLoader>
 {
+    [Header("Base Scenes")]
+    [Scene]
+    public string menuScene;
+
+    [Scene]
+    public string lobbyScene;
+
+    [Header("Game Scenes")]
     [Scene]
     public string commanderScene;
 
@@ -15,6 +23,16 @@ public class SceneLoader : Singleton<SceneLoader>
     string currentScene = "";
     string newActiveScene = "";
     bool isLoading = false;
+
+    BlurPanel blurPanel;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        blurPanel = GetComponentInChildren<BlurPanel>();
+        blurPanel.StartBlur(0, 1, 0);
+    }
 
     private void OnEnable()
     {
@@ -44,11 +62,16 @@ public class SceneLoader : Singleton<SceneLoader>
 
         isLoading = true;
 
-        //Fade to black
+        if (Player.localPlayer != null)
+            Player.localPlayer.DisablePlayer();
 
         //Unload current scene
         if(currentScene != "")
         {
+            //Fade to black
+            blurPanel.StartBlur(0, 1, 1);
+            yield return new WaitForSeconds(1.1f);
+
             AsyncOperation unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
 
             yield return unloadAsync;
@@ -72,7 +95,13 @@ public class SceneLoader : Singleton<SceneLoader>
         currentScene = newScene;
 
         //Fade from black
+        blurPanel.StartBlur(1, 0, 1);
+        yield return new WaitForSeconds(1.1f);
+
         isLoading = false;
+
+        if (Player.localPlayer != null)
+            Player.localPlayer.EnablePlayer();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -86,5 +115,16 @@ public class SceneLoader : Singleton<SceneLoader>
         }
 
         newActiveScene = "";
+    }
+
+    public void LoadScene(string newScene)
+    {
+        
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(menuScene);
+        //StartCoroutine("ChangeGameScene", menuScene);
     }
 }

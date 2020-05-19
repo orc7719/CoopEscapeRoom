@@ -29,7 +29,7 @@ public class RoomPlayerItem : MonoBehaviour
         readyButton.interactable = false;
         buttonText.text = "";
         nameText.text = "Waiting for player...";
-        roleText.text = "none";
+        roleText.text = "";
         roleButton.SetActive(false);
     }
 
@@ -68,7 +68,17 @@ public class RoomPlayerItem : MonoBehaviour
 
     public void UpdatePlayerRole(int newRole)
     {
-        roleText.text = newRole.ToString("00");
+        switch (newRole)
+        {
+            case 0:
+                roleText.text = "Commander";
+                break;
+            case 1:
+                roleText.text = "Survivor";
+                break;
+            default:
+                break;
+        }
     }
 
     public void UpdateStartScene(int newScene)

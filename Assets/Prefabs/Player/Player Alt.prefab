@@ -516,7 +516,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerInput: {fileID: 0}
-  enableOnSpawn: 1
+  enableOnSpawn: 0
   onToggleShared:
     m_PersistentCalls:
       m_Calls: []
@@ -764,6 +764,7 @@ MonoBehaviour:
     - Wires_Fuze04_StatusOn
     - Wires_Fuze04_StatusOff
     - Wires_Completed
+    - Demo_End
     _keys:
     - Symbols_KeypadCorrect
     - Wires_ActivateFuse01
@@ -779,6 +780,7 @@ MonoBehaviour:
     - Wires_Fuze04_StatusOn
     - Wires_Fuze04_StatusOff
     - Wires_Completed
+    - Demo_End
     _values:
     - {fileID: 11400000, guid: 7effa3d2b458fe24a816e4f2542d1e74, type: 2}
     - {fileID: 11400000, guid: 144639c626038714dba60917c9267973, type: 2}
@@ -794,6 +796,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 80a818c0fbbc75c4f91e256eaa9b46ef, type: 2}
     - {fileID: 11400000, guid: 87349bc0e6506c84eb7880874024e2d0, type: 2}
     - {fileID: 11400000, guid: e84916ecd8e04b84eb2caadf55153d10, type: 2}
+    - {fileID: 11400000, guid: ba29b7c735aeecf469f6017f801d3407, type: 2}
 --- !u!114 &9092728453389154018
 MonoBehaviour:
   m_ObjectHideFlags: 0

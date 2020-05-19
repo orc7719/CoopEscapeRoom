@@ -19,6 +19,13 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         currentRotation = cam.transform.localRotation;
+        UpdateSensitivity();
+    }
+
+    public void UpdateSensitivity()
+    {
+        ySensitivity = GameManager.Settings.PlayerData.sensitivity;
+        xSensitivity = GameManager.Settings.PlayerData.sensitivity;
     }
 
     void OnLookX(InputValue input)

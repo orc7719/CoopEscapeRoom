@@ -229,7 +229,7 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""id"": ""d48cebf3-5eea-47c0-bedb-fde319c615df"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2"",
                     ""groups"": ""Keyboard and Mouse"",
                     ""action"": ""Look"",
                     ""isComposite"": false,

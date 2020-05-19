@@ -9,10 +9,13 @@ public class InteractableButton : Interactable
     [SerializeField] float pressDistance = 0.05f;
     [SerializeField] float buttonCooldown = 0.8f;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip pressedSound;
+
     private void Start()
     {
         buttonModel = transform.Find("Model");
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Interacted(PlayerInteraction player)
@@ -22,6 +25,7 @@ public class InteractableButton : Interactable
 
     IEnumerator AnimateButton()
     {
+        audioSource.PlayOneShot(pressedSound);
         isInteractable = InteractState.Cooldown;
         buttonModel.DOLocalMoveY(-pressDistance, buttonCooldown / 2);
         yield return new WaitForSeconds(buttonCooldown / 2);

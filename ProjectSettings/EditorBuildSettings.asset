@@ -6,24 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Network/Lobby.unity
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: 84413cab09e223a4d87ff5b4928d0b9f
+  - enabled: 1
+    path: Assets/Scenes/Menu/Lobby.unity
     guid: 462e4d15b6f75104ca7bfe22f3907e3e
   - enabled: 1
     path: Assets/Scenes/Network/NetworkControl.unity
     guid: 7041e84c29d83f742b9cc4d365502006
   - enabled: 1
+    path: Assets/Scenes/Levels/Puzzle00_Control.unity
+    guid: 138aa4f464627254e853acd45e2cb8f4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Puzzle01_Symbols.unity
+    guid: c67dec70a1008144aa46dcb508221bc5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Puzzle02_Maze.unity
+    guid: 8cfa913cb404b4f4f8cd442c2a346b98
+  - enabled: 1
+    path: Assets/Scenes/Levels/Puzzle03_Wires.unity
+    guid: a504064f05c232642a653d4a8dae80a7
+  - enabled: 1
+    path: Assets/Scenes/Menu/Demo End.unity
+    guid: 0d5352ca33e0f014388a9449220fb508
+  - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/ControlRoom.unity
     guid: e7f842b02b0bd2e4494ea2129ba6dbf1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 01 - Symbols.unity
     guid: 6ba50dd635c27d14fb957d8d55e3c5ef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 02 - Maze.unity
     guid: 0b025c70d011c5d4f86d7f81815593fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 03 - Wires.unity
     guid: 1c77103cb13b2fe4cbdc59adcd6fdca8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 04 - Pipes.unity
     guid: 0c449cbcef3a9a4448ba4b1bccd36ba3
   - enabled: 0
@@ -32,9 +50,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Puzzle Prototypes/Puzzle 06 - Sequence.unity
     guid: 3f4707e68b41b6340b02df2c4022352d
-  - enabled: 0
-    path: Assets/Scenes/Testing Scenes/maze block out.unity
-    guid: efa9cdf1e2e7ddf4ea253f22caa441c7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3d7b9ecce9addc64c8384295d75b78e3,
       type: 2}

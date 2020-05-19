@@ -61,6 +61,9 @@ public class Player : NetworkBehaviour
     {
         localPlayer = this;
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         if (roleId != -1)
             SceneLoader.Instance.LoadGameScene(roleId, CustomNetworkRoomManager.singleton.startingScene);
     }
@@ -83,7 +86,7 @@ public class Player : NetworkBehaviour
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        PlayerCanvas.Instance.HideMenu();
+        
 
         ClearPlayer();
 
