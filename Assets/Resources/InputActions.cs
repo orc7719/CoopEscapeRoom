@@ -51,19 +51,11 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Look"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""c7a20409-e0b9-45c4-8e69-23efed122182"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""LookX"",
                     ""type"": ""Value"",
                     ""id"": ""11cd8068-f548-4ba0-828f-26f1c3297820"",
                     ""expectedControlType"": ""Analog"",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=0.25)"",
                     ""interactions"": """"
                 },
                 {
@@ -71,7 +63,7 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""323c738b-19ab-4aac-9089-3806810d1b87"",
                     ""expectedControlType"": ""Analog"",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=0.25)"",
                     ""interactions"": """"
                 },
                 {
@@ -226,17 +218,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d48cebf3-5eea-47c0-bedb-fde319c615df"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": ""ScaleVector2"",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""96db4c43-f053-4c04-b3d2-2abaca790b9a"",
                     ""path"": ""<Mouse>/delta/x"",
                     ""interactions"": """",
@@ -345,7 +326,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_LookX = m_Player.FindAction("LookX", throwIfNotFound: true);
         m_Player_LookY = m_Player.FindAction("LookY", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
@@ -406,7 +386,6 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Drop;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_LookX;
     private readonly InputAction m_Player_LookY;
     private readonly InputAction m_Player_Sprint;
@@ -419,7 +398,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         public InputAction @Drop => m_Wrapper.m_Player_Drop;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @LookX => m_Wrapper.m_Player_LookX;
         public InputAction @LookY => m_Wrapper.m_Player_LookY;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
@@ -445,9 +423,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @LookX.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookX;
                 @LookX.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookX;
                 @LookX.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookX;
@@ -476,9 +451,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Look.started += instance.OnLook;
-                @Look.performed += instance.OnLook;
-                @Look.canceled += instance.OnLook;
                 @LookX.started += instance.OnLookX;
                 @LookX.performed += instance.OnLookX;
                 @LookX.canceled += instance.OnLookX;
@@ -543,7 +515,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         void OnDrop(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);

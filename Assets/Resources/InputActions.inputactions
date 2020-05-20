@@ -38,19 +38,11 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Look",
-                    "type": "PassThrough",
-                    "id": "c7a20409-e0b9-45c4-8e69-23efed122182",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "LookX",
                     "type": "Value",
                     "id": "11cd8068-f548-4ba0-828f-26f1c3297820",
                     "expectedControlType": "Analog",
-                    "processors": "",
+                    "processors": "Scale(factor=0.25)",
                     "interactions": ""
                 },
                 {
@@ -58,7 +50,7 @@
                     "type": "Value",
                     "id": "323c738b-19ab-4aac-9089-3806810d1b87",
                     "expectedControlType": "Analog",
-                    "processors": "",
+                    "processors": "Scale(factor=0.25)",
                     "interactions": ""
                 },
                 {
@@ -208,17 +200,6 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d48cebf3-5eea-47c0-bedb-fde319c615df",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "ScaleVector2",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

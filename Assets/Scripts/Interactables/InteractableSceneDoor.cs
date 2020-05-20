@@ -10,14 +10,15 @@ public class InteractableSceneDoor : Interactable
     [SerializeField] string nextScene;
     [SerializeField] float doorTime = 0.5f;
     [SerializeField] Transform doorTarget;
-    Transform model;
+    [SerializeField] Transform model;
 
     AudioSource audioSource;
     [SerializeField] AudioClip openSound;
 
     private void Start()
     {
-        model = transform.Find("Model");
+        if (model == null)
+            model = transform.Find("Model");
         audioSource = GetComponent<AudioSource>();
     }
 
