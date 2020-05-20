@@ -516,7 +516,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerInput: {fileID: 0}
-  enableOnSpawn: 1
+  enableOnSpawn: 0
   onToggleShared:
     m_PersistentCalls:
       m_Calls: []
