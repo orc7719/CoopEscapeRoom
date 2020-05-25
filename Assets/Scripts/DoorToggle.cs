@@ -20,8 +20,12 @@ public class DoorToggle : MonoBehaviour
     [SerializeField] AudioClip openSound;
     [SerializeField] AudioClip closeSound;
 
+    float startTime;
+
     private void Start()
     {
+        startTime = Time.time;
+
         startPos = doorObject.transform.localPosition;
         startRot = doorObject.transform.localRotation;
 
@@ -45,8 +49,11 @@ public class DoorToggle : MonoBehaviour
 
         public void MoveDoor(bool newValue, float modifier, bool playSound)
     {
-        if (playSound && (newValue ? openSound : closeSound) != null)
-            audioSource.PlayOneShot(newValue ? openSound : closeSound);
+        if (Time.time >= startTime + 1f)
+        {
+            if (playSound && (newValue ? openSound : closeSound) != null)
+                audioSource.PlayOneShot(newValue ? openSound : closeSound);
+        }
 
         doorStatus = newValue;
         doorObject.DOLocalMove(newValue ? targetPos.localPosition : startPos, transitionTime * modifier);
