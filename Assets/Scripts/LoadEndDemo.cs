@@ -12,6 +12,8 @@ public class LoadEndDemo : MonoBehaviour
 
     public void LoadDemoEnd()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(demoEndScene);
     }
 }
