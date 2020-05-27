@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 4450851150946580747}
-  interactDistance: 1.75
+  interactDistance: 2
   interactLayer:
     serializedVersion: 2
     m_Bits: 3383

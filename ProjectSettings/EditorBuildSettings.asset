@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: c67dec70a1008144aa46dcb508221bc5
   - enabled: 1
     path: Assets/Scenes/Levels/Puzzle02_Maze.unity
-    guid: 8cfa913cb404b4f4f8cd442c2a346b98
+    guid: 49df505e397e8bf41883aad210893e35
   - enabled: 1
     path: Assets/Scenes/Levels/Puzzle03_Wires.unity
     guid: a504064f05c232642a653d4a8dae80a7
