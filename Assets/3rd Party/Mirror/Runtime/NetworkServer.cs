@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace Mirror
@@ -113,6 +114,7 @@ namespace Mirror
             }
             dontListen = false;
             active = false;
+            handlers.Clear();
 
             NetworkIdentity.ResetNextNetworkId();
         }
@@ -137,7 +139,6 @@ namespace Mirror
         {
             RegisterHandler<ReadyMessage>(OnClientReadyMessage);
             RegisterHandler<CommandMessage>(OnCommandMessage);
-            RegisterHandler<RemovePlayerMessage>(OnRemovePlayerMessage);
             RegisterHandler<NetworkPingMessage>(NetworkTime.OnServerPing, false);
         }
 
@@ -923,17 +924,32 @@ namespace Mirror
             SetClientReady(conn);
         }
 
-        // default remove player handler
-        static void OnRemovePlayerMessage(NetworkConnection conn, RemovePlayerMessage msg)
+        // Deprecated 5/2/2020
+        /// <summary>
+        /// Obsolete: Removed as a security risk. Use <see cref="NetworkServer.RemovePlayerForConnection(NetworkConnection, GameObject, bool)"/> instead.
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never), Obsolete("Removed as a security risk. Use NetworkServer.RemovePlayerForConnection(NetworkConnection conn, GameObject player, bool keepAuthority = false) instead", true)]
+        static void OnRemovePlayerMessage(NetworkConnection conn, RemovePlayerMessage msg) { }
+
+        /// <summary>
+        /// Removes the player object from the connection
+        /// </summary>
+        /// <param name="conn">The connection of the client to remove from</param>
+        /// <param name="destroyServerObject">Indicates whether the server object should be destroyed</param>
+        public static void RemovePlayerForConnection(NetworkConnection conn, bool destroyServerObject)
         {
             if (conn.identity != null)
             {
-                Destroy(conn.identity.gameObject);
+                if (destroyServerObject)
+                    Destroy(conn.identity.gameObject);
+                else
+                    UnSpawn(conn.identity.gameObject);
+
                 conn.identity = null;
             }
             else
             {
-                Debug.LogError("Received remove player message but connection has no player");
+                if (LogFilter.Debug) Debug.Log($"Connection {conn} has no identity");
             }
         }
 
