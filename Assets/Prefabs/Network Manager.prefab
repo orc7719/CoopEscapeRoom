@@ -58,7 +58,7 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 5586998560866109140, guid: 4a3986a427dbf8549b40e6e269bfc746,
+  playerPrefab: {fileID: 596558828089666440, guid: 54144aab646107147831600cdef767b9,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -102,7 +102,9 @@ MonoBehaviour:
   port: 7777
   NoDelay: 1
   serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
   clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
 --- !u!114 &3708025729603652079
 MonoBehaviour:
   m_ObjectHideFlags: 0

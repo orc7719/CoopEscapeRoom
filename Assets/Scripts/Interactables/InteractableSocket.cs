@@ -31,9 +31,6 @@ public class InteractableSocket : Interactable
         if (player.heldObject == null && socketedObject != null)
             return isInteractable;
 
-        if (player.heldObject != null && socketedObject != null)
-            return InteractState.Locked;
-
         SocketableObject targetObject = player.heldObject as SocketableObject;
         if (targetObject != null)
         {
@@ -75,14 +72,48 @@ public class InteractableSocket : Interactable
         }
         else
         {
-            socketedObject.DetachFromSocket(player);
-            socketedObject = null;
+            if (player.heldObject != null)
+            {
+                SocketableObject targetObject = player.heldObject as SocketableObject;
 
-            socketCorrect = false;
-            if (OnSocketUpdated != null)
-                OnSocketUpdated.Invoke(false);
+                if (targetObject != null)
+                {
+                    if (targetObject.socketType == socketType)
+                    {
+                        SocketableObject currentSocket = socketedObject;
 
-            objectHighlight.gameObject.SetActive(true);
+                        targetObject.AttachToSocket(player, this);
+
+                        currentSocket.DetachFromSocket(player);
+                        
+
+                        if (socketedObject.socketTag == correctTag)
+                        {
+                            socketCorrect = true;
+                        }
+                        else
+                        {
+                            socketCorrect = false;
+                        }
+
+                        if (OnSocketUpdated != null)
+                            OnSocketUpdated.Invoke(socketCorrect);
+
+                        objectHighlight.gameObject.SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                socketedObject.DetachFromSocket(player);
+                socketedObject = null;
+
+                socketCorrect = false;
+                if (OnSocketUpdated != null)
+                    OnSocketUpdated.Invoke(false);
+
+                objectHighlight.gameObject.SetActive(true);
+            }
         }
     }
 }

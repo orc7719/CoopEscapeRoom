@@ -37,6 +37,7 @@ public class PlayerCanvas : Singleton<PlayerCanvas>
     {
         base.Start();
         ToggleMenu();
+        LoadSettings();
     }
 
     public void ShowInteract(bool newValue)

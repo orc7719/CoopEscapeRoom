@@ -26,8 +26,8 @@ public class GrabbableObject : Interactable
 
     public void AttachToPlayer(PlayerInteraction player)
     {
-        if (player.heldObject == null)
-        {
+        //if (player.heldObject == null)
+        //{
             //Attach to player
             player.heldObject = this;
             ToggleAllColliders(false);
@@ -37,7 +37,7 @@ public class GrabbableObject : Interactable
             transform.DOLocalRotateQuaternion(attachPoint.localRotation, 0.25f);
 
             wasDropped = false;
-        }
+        //}
     }
 
     public void ToggleAllColliders(bool newValue)

@@ -99,6 +99,9 @@ public class MainMenu : MonoBehaviour
     {
         if (activeCanvas != null)
         {
+            if (activeCanvas == settingsPanel)
+                SaveSettings();
+
             activeCanvas.SetActive(false);
             activeCanvas = null;
             backButton.SetActive(false);
@@ -107,7 +110,7 @@ public class MainMenu : MonoBehaviour
 
     void LoadSettings()
     {
-        audioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol", 0));
+        audioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol", -70));
         audioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SfxVol", 0));
         audioMixer.SetFloat("AmbienceVol", PlayerPrefs.GetFloat("AmbientVol",0));
         audioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol", 0));
@@ -116,8 +119,8 @@ public class MainMenu : MonoBehaviour
         masterVolSlider.value = PlayerPrefs.GetFloat("MasterVol", 0);
         sfxVolSlider.value = PlayerPrefs.GetFloat("SFXVol", 0);
         ambientVolSlider.value = PlayerPrefs.GetFloat("AmbienceVol", 0);
-        musicVolSlider.value = PlayerPrefs.GetFloat("MasterVol", 0);
-        mouseSlider.value = PlayerPrefs.GetFloat("MusicVol", 1);
+        musicVolSlider.value = PlayerPrefs.GetFloat("MusicVol", 0);
+        mouseSlider.value = PlayerPrefs.GetFloat("MouseSens", 1);
 
         UpdateMasterVol(PlayerPrefs.GetFloat("MasterVol", 0));
         UpdateSfxVol(PlayerPrefs.GetFloat("SFXVol", 0));

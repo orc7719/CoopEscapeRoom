@@ -72,6 +72,16 @@ public class PlayerMovementChar : MonoBehaviour
             yVelocity -= gravity * Time.deltaTime;
 
         playerVelocity.y = yVelocity;
+
+        if (transform.position.y < -10)
+        {
+            playerVelocity = Vector3.zero;
+            transform.position = PlayerSpawn.instance.transform.position;
+            return;
+        }
+
+
+
         charController.Move(playerVelocity * Time.deltaTime);
 
         if (charController.isGrounded)
