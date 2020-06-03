@@ -17033,7 +17033,6 @@ GameObject:
   - component: {fileID: 1731388377}
   - component: {fileID: 1731388376}
   - component: {fileID: 1731388375}
-  - component: {fileID: 1731388378}
   m_Layer: 0
   m_Name: Lobby Manager
   m_TagString: Untagged
@@ -17048,9 +17047,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731388374}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5671dcb80f9d69240b71f5612676a3fd, type: 3}
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnClientConnected:
@@ -17077,31 +17076,12 @@ MonoBehaviour:
   OnServerDisconnected:
     m_PersistentCalls:
       m_Calls: []
-  clientAddress: 127.0.0.1
-  serverIPv4BindAddress: 0.0.0.0
-  serverIPv6BindAddress: '::'
   port: 7777
-  useUpnP: 1
-  maxConnections: 2
-  ipv6Enabled: 1
-  channels: 0204010300
-  authCode: 
-  updateTime: 15
-  pingInterval: 1000
-  disconnectTimeout: 5000
-  reconnectDelay: 500
-  maxConnectAttempts: 10
-  simulatePacketLoss: 0
-  simulationPacketLossChance: 10
-  simulateLatency: 0
-  simulationMinLatency: 30
-  simulationMaxLatency: 100
-  onClientSocketError:
-    m_PersistentCalls:
-      m_Calls: []
-  onServerSocketError:
-    m_PersistentCalls:
-      m_Calls: []
+  NoDelay: 1
+  serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
+  clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
 --- !u!114 &1731388376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17121,7 +17101,7 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: 
   onlineScene: 
-  transport: {fileID: 1731388378}
+  transport: {fileID: 1731388375}
   networkAddress: localhost
   maxConnections: 2
   disconnectInactiveConnections: 0
@@ -17156,67 +17136,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1731388378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731388374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5671dcb80f9d69240b71f5612676a3fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClientConnected:
-    m_PersistentCalls:
-      m_Calls: []
-  OnClientDataReceived:
-    m_PersistentCalls:
-      m_Calls: []
-  OnClientError:
-    m_PersistentCalls:
-      m_Calls: []
-  OnClientDisconnected:
-    m_PersistentCalls:
-      m_Calls: []
-  OnServerConnected:
-    m_PersistentCalls:
-      m_Calls: []
-  OnServerDataReceived:
-    m_PersistentCalls:
-      m_Calls: []
-  OnServerError:
-    m_PersistentCalls:
-      m_Calls: []
-  OnServerDisconnected:
-    m_PersistentCalls:
-      m_Calls: []
-  clientAddress: 127.0.0.1
-  serverIPv4BindAddress: 0.0.0.0
-  serverIPv6BindAddress: '::'
-  port: 7777
-  useUpnP: 1
-  maxConnections: 20
-  ipv6Enabled: 1
-  channels: 0204010300
-  authCode: 
-  updateTime: 15
-  pingInterval: 1000
-  disconnectTimeout: 5000
-  reconnectDelay: 500
-  maxConnectAttempts: 10
-  simulatePacketLoss: 0
-  simulationPacketLossChance: 10
-  simulateLatency: 0
-  simulationMinLatency: 30
-  simulationMaxLatency: 100
-  onClientSocketError:
-    m_PersistentCalls:
-      m_Calls: []
-  onServerSocketError:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1732031899
 PrefabInstance:
   m_ObjectHideFlags: 0
